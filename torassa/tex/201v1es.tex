@@ -1,0 +1,713 @@
+
+\documentclass[10pt,fleqn]{article}
+%\documentclass[a4paper,10pt]{article}»
+%\documentclass[letterpaper,10pt]{article}
+
+%\usepackage[dvips]{geometry}
+%\geometry{papersize={162.0mm,234.0mm}}
+%\geometry{totalwidth=141.0mm,totalheight=198.0mm}
+\usepackage[papersize={162.0mm,234.0mm},totalwidth=141.0mm,totalheight=198.0mm]{geometry}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+%\usepackage{mathptmx}
+%\usepackage{pslatex}
+%\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\frenchspacing
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,bookmarksopen=true}
+\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseOutlines}
+%\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseNone}
+\hypersetup{pdftitle={Relatividad Especial: Tipos de Fuerzas}}
+\hypersetup{pdfauthor={A. Torassa}}
+
+\setlength{\arraycolsep}{1.74pt}
+
+\newcommand{\vet}{\smallskip}
+\newcommand{\vek}{\bigskip \medskip}
+
+%\ccl Atribución 4.0 Internacional Licencia
+%\cct Atribución 4.0 Internacional Licencia
+%\newcommand{\ccl}{${\large{\textcircled{\raisebox{+0.8pt}{{\scriptsize{{\textsf{cc}}}}}}}}$\;}
+%\newcommand{\cct}{${\normalsize{\textcircled{\raisebox{+1.00pt}{{\tiny{{\texttt{cc}}}}}}}}$\;}
+
+\newcommand{\med}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+\newcommand{\met}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+
+\begin{document}
+
+\enlargethispage{+0.00em}
+
+\addcontentsline{toc}{section}{Relatividad Especial: Tipos de Fuerzas}
+
+\begin{center}
+
+{\LARGE Relatividad Especial: Tipos de Fuerzas}
+
+\vek
+
+{\large A. Torassa}
+
+\vek
+
+\small
+
+Licencia Creative Commons Atribución 4.0
+
+\vet
+
+\href{https://orcid.org/0000-0002-1389-247X}{\scriptsize{ORCID}} \S \ (2024) Buenos Aires
+%\href{https://orcid.org/0000-0002-1389-247X}{\normalsize{\textsc{orcid}}} \S \ (2024) Buenos Aires
+
+\vet
+
+Argentina
+
+\bigskip \bigskip
+
+\parbox{102.00mm}{En relatividad especial, este trabajo presenta cuatro fuerzas netas, que pueden ser aplicadas en cualquier partícula masiva o no masiva y donde la relación entre fuerza neta y aceleración especial es como en la segunda ley de Newton ( es decir, la fuerza neta que actúa sobre una partícula masiva o no masiva siempre tiene igual dirección y sentido que la aceleración especial de la partícula )}
+
+\end{center}
+
+\normalsize
+
+\vspace{-1.20em}
+
+\par \bigskip {\centering\subsection*{Introducción}}\addcontentsline{toc}{subsection}{Introducción}
+
+\bigskip \smallskip
+
+\noindent En relatividad especial, este trabajo se desarrolla a partir de las definiciones esenciales de masa intrínseca ( o masa invariante ) y factor relativista ( o factor frecuencia ) para partículas masivas y partículas no masivas.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{m}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{f}\hspace{+0.06em})$ de una partícula masiva, \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ m_o
+\end{eqnarray}
+\vspace{-0.90em}
+\begin{eqnarray}
+f ~\doteq~ \Big ( 1 - \dfrac{\mathbf{v} \cdot \mathbf{v}}{c^2} \hspace{+0.15em} \Big )^{\hspace{-0.24em}-\hspace{+0.03em}1/2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \, m_o \, )$ es la masa en reposo de la partícula masiva, $( \, \mathbf{v} \, )$ es la velocidad de la partícula masiva y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{m}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{f}\hspace{+0.06em})$ de una partícula no masiva, \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ \dfrac{h \, \kappa}{c^2}
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+f ~\doteq~ \dfrac{\nu}{\kappa}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \hspace{+0.33em} h \hspace{+0.33em} )$ es la constante de Planck, \hspace{+0.06em}$( \hspace{+0.30em} \nu \hspace{+0.30em} )$ es la frecuencia de la partícula no masiva, $( \, \kappa \, )$ es una constante universal positiva con dimensión de frecuencia y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent Según este trabajo, una partícula masiva $( \, m_o \ne 0 \, )$ es una partícula con masa en reposo no nula ( o una partícula cuya velocidad $v$ en el vacío es menor que $c$ ) y una partícula no masiva $( \, m_o = 0 \, )$ es una partícula con masa en reposo nula ( o una partícula cuya velocidad $v$ en el vacío es $c$ )
+\par \vspace{+0.60em}
+\noindent Nota : La masa en reposo $( \, m_o \, )$ y la masa intrínseca $( \, m \, )$ son en general no aditivas y la masa relativista $( \, {\mathrm{m}} \, )$ de una partícula ( masiva o no masiva ) está dada por : \hbox {\hspace{-0.09em}( ${\mathrm{m}} ~\doteq~ m \, f$ )}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática Einsteniana}}\addcontentsline{toc}{subsection}{» 1 : Cinemática Einsteniana}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{r}} \, )$ la velocidad especial $( \, \bar{\mathbf{v}} \, )$ y la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \int f \, \mathbf{v} \; d\hspace{+0.012em}t
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}t} ~=~ f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}t} ~=~ f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula y $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em})
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Dinámica Einsteniana}}\addcontentsline{toc}{subsection}{» 1 : Dinámica Einsteniana}
+
+\bigskip \smallskip
+
+\noindent Sea una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ de la partícula, el momento angular $( \, \mathbf{L} \, )$ de la partícula, \hbox {la fuerza} einsteniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ que actúa sobre la partícula, el trabajo $( \, \mathrm{W} \, )$ realizado por la fuerza einsteniana neta que actúa sobre la partícula y la energía cinética $( \, \mathrm{K} \, )$ de la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \, f \: \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\hypertarget{efe}{}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{E}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, \bigg [ \, f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} \, \bigg ]
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ m \, f \, c^2
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: f, \: \mathbf{r}, \: \mathbf{v}, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ son el factor relativista, la posición, la velocidad, la velocidad especial y la aceleración especial de la partícula, $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) y $( \, c \, )$ es la velocidad de la luz en el vacío. La energía cinética $( \, \mathrm{K}_o \, )$ de una partícula masiva en reposo es $( \, m_o \, c^2 \, )$ puesto que en esta dinámica la energía relativista $( \, \mathrm{E} \,\doteq\, m_o \, c^2 \, (\,f - 1\,) + m_o \, c^2 \, )$ y la energía cinética $( \, \mathrm{K} \,\doteq\, m \, f \, c^2 \, )$ son lo mismo $( \, \mathrm{E} \,=\, \mathrm{K} \, )$ \hyperlink{ref}{[\,1\,]}
+\par \vspace{+0.60em}
+\noindent {\small Nota :} {\footnotesize $\mathrm{E}^2 - \mathbf{P}^2 c^2 = m^2 \, f^2 \, c^4 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em})$} {\small [ en partícula masiva :} {\footnotesize $f^2 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 1$ \hspace{+0.12em}$\rightarrow$\hspace{+0.12em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = {m_o}^2 c^4$}} \;y\; $m \ne 0$} {\small ]} \; {\footnotesize\&} \; {\small [ en partícula no masiva :} {\footnotesize $\mathbf{v}^2 = c^2$ \hspace{+0.36em}$\rightarrow$\hspace{+0.36em} $(\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 0$ \hspace{+0.36em}$\rightarrow$\hspace{+0.36em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = 0$ \, y \, $m \ne 0$} {\small \:]}}} {\footnotesize En relatividad especial hay 3 tipos de masas: masa en reposo ($m_o$) masa intrínseca ($m$) y \hbox {masa relativista (${\mathrm{m}}$)}}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática Newtoniana}}\addcontentsline{toc}{subsection}{» 2 : Cinemática Newtoniana}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{r}} \, )$ la velocidad especial $( \, \bar{\mathbf{v}} \, )$ y la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \mathbf{r}
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}t} ~=~ \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}t} ~=~ \mathbf{a}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, \mathbf{r} \, )$ es la posición de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula, $( \, \mathbf{a} \, )$ es la aceleración de la partícula y $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em})
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Dinámica Newtoniana}}\addcontentsline{toc}{subsection}{» 2 : Dinámica Newtoniana}
+
+\bigskip \smallskip
+
+\noindent Sea una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ de la partícula, el momento angular $( \, \mathbf{L} \, )$ de la partícula, \hbox {la fuerza} newtoniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{N}} \, )$ que actúa sobre la partícula, el trabajo $( \, \mathrm{W} \, )$ realizado por la fuerza newtoniana neta que actúa sobre la partícula y la energía cinética $( \, \mathrm{K} \, )$ de la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \; \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\hypertarget{efn}{}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{N}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, \mathbf{a}
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \mathbf{F}\mathrm{\scriptscriptstyle{N}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ \med \hspace{+0.36em} m \: ( \mathbf{v} \cdot \mathbf{v} )
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: \mathbf{r}, \: \mathbf{v}, \: \mathbf{a}, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ son la posición, la velocidad, la aceleración, la velocidad especial y la aceleración especial de la partícula, $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) y $( \, c \, )$ es la velocidad de la luz en el vacío. La energía cinética $( \, \mathrm{K}_o \, )$ de una partícula masiva en reposo es cero y la fuerza newtoniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{N}} \, )$ siempre tiene también igual dirección y sentido que la aceleración ordinaria $( \, \mathbf{a} \, )$ de la partícula masiva o no masiva.
+\par \vspace{+0.60em}
+\noindent En relatividad especial, la fuerza newtoniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{N}} \, )$ que actúa sobre una partícula masiva o no masiva, está dada por : $\mathbf{F}\mathrm{\scriptscriptstyle{N}} ~\doteq~ \mathbf{N}^{\scriptscriptstyle -1} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ , donde $( \, \mathbf{N} \, )$ es el tensor de Newton y $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ es la fuerza einsteniana neta que actúa sobre la partícula masiva o no masiva \hyperlink{ref}{[\,2\,]}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática Poincariana}}\addcontentsline{toc}{subsection}{» 3 : Cinemática Poincariana}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{r}} \, )$ la velocidad especial $( \, \bar{\mathbf{v}} \, )$ y la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \mathbf{r}
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}\tau} ~=~ f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}\tau} ~=~ f \, \bigg [ \, f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} \, \bigg ]
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{r} \, )$ es la posición de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula y $( \, \tau \, )$ es el tiempo propio de la partícula ( Nota : $d\tau \,=\, f^{\scriptscriptstyle -1} \: dt$ )
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Dinámica Poincariana}}\addcontentsline{toc}{subsection}{» 3 : Dinámica Poincariana}
+
+\bigskip \smallskip
+
+\noindent Sea una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ de la partícula, el momento angular $( \, \mathbf{L} \, )$ de la partícula, \hbox {la fuerza} poincariana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{P}} \, )$ que actúa sobre la partícula, el trabajo $( \, \mathrm{W} \, )$ realizado por la fuerza poincariana neta que actúa sobre la partícula y la energía cinética $( \, \mathrm{K} \, )$ de la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \, f \: \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\hypertarget{efp}{}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{P}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}\tau} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, f \, \bigg [ \, f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} \, \bigg ]
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} f^{\scriptscriptstyle -1} \: \mathbf{F}\mathrm{\scriptscriptstyle{P}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} f^{\scriptscriptstyle -1} \: \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}\tau} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ m \, f \, c^2
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: f, \: \mathbf{r}, \: \mathbf{v}, \: \tau, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ son el factor relativista, la posición, la velocidad, el tiempo propio, la velocidad especial y la aceleración especial de la partícula y $( \, c \, )$ es la velocidad de la luz en el vacío. La energía cinética $( \, \mathrm{K}_o \, )$ de una partícula masiva en reposo es $( \, m_o \, c^2 \, )$ puesto que también en esta dinámica la energía relativista $( \, \mathrm{E} \,\doteq\, m_o \, c^2 \, (\,f - 1\,) + m_o \, c^2 \, )$ y la energía cinética $( \, \mathrm{K} \,\doteq\, m \, f \, c^2 \, )$ son lo mismo $( \, \mathrm{E} \,=\, \mathrm{K} \, )$
+\par \vspace{+0.60em}
+\noindent En relatividad especial, la fuerza poincariana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{P}} \, )$ que actúa sobre una partícula masiva o no masiva, está dada por : $\mathbf{F}\mathrm{\scriptscriptstyle{P}} ~\doteq~ f \hspace{+0.36em} \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ , donde $( \, f \, )$ es el factor relativista de la partícula y $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ es la fuerza einsteniana neta que actúa sobre la partícula masiva o no masiva \hyperlink{ref}{[\,3\,]}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática M{\o}lleriana}}\addcontentsline{toc}{subsection}{» 4 : Cinemática M{\o}lleriana}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{r}} \, )$ la velocidad especial $( \, \bar{\mathbf{v}} \, )$ y la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \int \mathbf{v} \; d\hspace{+0.012em}\tau
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}\tau} ~=~ \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}\tau} ~=~ f \, \mathbf{a}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{r}, \: \mathbf{v}, \: \mathbf{a} \, )$ son la posición, la velocidad y la aceleración de la partícula y $( \, \tau \, )$ es el tiempo propio de la partícula ( Nota : $d\tau \,=\, f^{\scriptscriptstyle -1} \: dt$ )
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Dinámica M{\o}lleriana}}\addcontentsline{toc}{subsection}{» 4 : Dinámica M{\o}lleriana}
+
+\bigskip \smallskip
+
+\noindent Sea una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ de la partícula, el momento angular $( \, \mathbf{L} \, )$ de la partícula, \hbox {la fuerza} m{\o}lleriana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \, )$ que actúa sobre la partícula, el trabajo $( \, \mathrm{W} \, )$ realizado por la fuerza m{\o}lleriana neta que actúa sobre la partícula y la energía cinética $( \, \mathrm{K} \, )$ de la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \; \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\hypertarget{efm}{}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{M}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}\tau} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, f \, \mathbf{a}
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} f^{\scriptscriptstyle -1} \: \mathbf{F}\mathrm{\scriptscriptstyle{M}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} f^{\scriptscriptstyle -1} \: \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}\tau} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ \med \hspace{+0.36em} m \: ( \mathbf{v} \cdot \mathbf{v} )
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: f, \: \mathbf{r}, \: \mathbf{v}, \: \mathbf{a}, \: \tau, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ son el factor relativista, la posición, la velocidad, la aceleración, el tiempo propio, la velocidad especial y la aceleración especial de la partícula y $( \, c \, )$ es la velocidad de la luz en el vacío. La energía cinética $( \, \mathrm{K}_o \, )$ de una partícula masiva en reposo es cero y la fuerza m{\o}lleriana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \, )$ siempre tiene también igual dirección y sentido que la aceleración ordinaria $( \, \mathbf{a} \, )$ de la partícula masiva o no masiva.
+\par \vspace{+0.60em}
+\noindent En relatividad especial, la fuerza m{\o}lleriana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \, )$ que actúa sobre una partícula masiva o no masiva, está dada por : $\mathbf{F}\mathrm{\scriptscriptstyle{M}} ~\doteq~ \mathbf{M} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ , donde $( \, \mathbf{M} \, )$ es el tensor de M{\o}ller y $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ es la fuerza einsteniana neta que actúa sobre la partícula masiva o no masiva \hyperlink{an1}{\hbox {(ver {\small A}nexo {\small I}\hspace{+0.120em})}} \hyperlink{ref}{[\,4\,]}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Observaciones Generales}}\addcontentsline{toc}{subsection}{Observaciones Generales}
+
+\bigskip \smallskip
+
+\noindent En relatividad especial, las fuerzas netas $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{N}}, \mathbf{F}\mathrm{\scriptscriptstyle{P}}, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \: ]$ son válidas puesto que estas fuerzas netas son obtenidas a partir de la fuerza einsteniana neta $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{E}} \: ]$
+\par \medskip \smallskip
+\noindent Por lo tanto, las fuerzas netas $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{E}}, \mathbf{F}\mathrm{\scriptscriptstyle{N}}, \mathbf{F}\mathrm{\scriptscriptstyle{P}}, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \: ]$ pueden ser aplicadas en cualquier sistema de referencia inercial.
+\par \medskip \smallskip
+\noindent Las fuerzas netas $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{E}}, \mathbf{F}\mathrm{\scriptscriptstyle{N}}, \mathbf{F}\mathrm{\scriptscriptstyle{P}}, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \: ]$ que actúan sobre una partícula \hbox {(\hspace{+0.12em}masiva o no masiva\hspace{+0.12em})} siempre tienen igual \hbox {dirección} y sentido que la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de la partícula (\hspace{+0.12em}como en la 2ª ley de Newton\hspace{+0.12em})
+\par \medskip \smallskip
+\noindent Adicionalmente, las fuerzas netas $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{N}} \, , \mathbf{F}\mathrm{\scriptscriptstyle{M}} \: ]$ que actúan sobre una partícula (\hspace{+0.12em}masiva o no masiva\hspace{+0.12em}) siempre tienen también igual \hbox {dirección} y sentido que la aceleración ordinaria $( \, \mathbf{a} \, )$ de la partícula (\hspace{+0.12em}exactamente como en la 2ª ley de Newton\hspace{+0.12em}) \hbox {( {\small Nota} : $\mathbf{F}\mathrm{\scriptscriptstyle{N}} = f^{\scriptscriptstyle -1} \, \mathbf{F}\mathrm{\scriptscriptstyle{M}} = f^{\scriptscriptstyle -1} \, \mathbf{M} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ )}
+\par \medskip \smallskip
+\noindent Las fuerzas netas $[ \: \mathbf{F}\mathrm{\scriptscriptstyle{E}}, \mathbf{F}\mathrm{\scriptscriptstyle{N}}, \mathbf{F}\mathrm{\scriptscriptstyle{P}}, \mathbf{F}\mathrm{\scriptscriptstyle{M}} \: ]$ son trifuerzas ( es decir, son vectores tridimensionales )
+\par \medskip \smallskip
+\noindent Por otro lado, la cuadrifuerza minkowskiana neta $[ \: \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{M}} \: ]$ es obtenida a partir del \hbox {cuadrimomento} y el tiempo propio de una partícula masiva y la cuadrifuerza einsteniana neta $[ \: \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{E}} \: ]$ puede ser obtenida a partir del cuadrimomento y el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) de una partícula masiva \hbox {( {\small Nota} : $\mathbf{\overline{F}}\mathrm{\scriptscriptstyle{E}} = ( \; ( \, d\hspace{+0.012em}\mathrm{E}\hspace{+0.12em}/\hspace{+0.03em}dt \, ) \: c^{\scriptscriptstyle -1} \, , \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \; )$\hspace{+0.48em}y\hspace{+0.48em}$ \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{M}} = f \hspace{+0.36em} \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{E}}$\hspace{+0.36em})\hspace{+0.48em}[\hspace{+0.36em}ver : \hyperlink{apa}{{\small A}péndice {\small A}\hspace{+0.120em}} y \hyperlink{apb}{{\small A}péndice {\small B}\hspace{+0.120em}}\hspace{+0.36em}]}
+\par \medskip \smallskip
+\noindent En relatividad especial, hay tres tipos de masas que son compatibles entre sí : la masa en reposo $( \, m_o \, )$ la masa intrínseca $( \, m \, )$ y la masa relativista $( \, {\mathrm{m}} \, )$ ( la masa intrínseca $( \, m \, )$ es una masa invariante que puede ser aplicada en partículas masivas y no masivas )
+\par \medskip \smallskip
+\noindent En la dinámica poincariana, la definición de trabajo $( \, \mathrm{W} \, )$ ha sido modificada para que las magnitudes $( \, \mathbf{P}, \mathrm{K} \, )$ coincidan con las magnitudes $( \, \mathbf{P}, \mathrm{K} \, )$ de la dinámica einsteniana. 
+\par \medskip \smallskip
+\noindent En la dinámica m{\o}lleriana, la definición de trabajo $( \, \mathrm{W} \, )$ ha sido modificada para que las magnitudes $( \, \mathbf{P}, \mathrm{K} \, )$ coincidan con las magnitudes $( \, \mathbf{P}, \mathrm{K} \, )$ de la dinámica newtoniana. 
+\par \medskip \smallskip
+\noindent Adicionalmente, en las colisiones elásticas relativistas ( o choques elásticos relativistas ) entre partículas masivas {\small y/o} no masivas de un sistema aislado, las magnitudes $( \, \mathbf{P} = \sum \, m_i \, f_i \, \mathbf{v}_i \, )$ y $( \, \mathrm{K} = \sum \, m_i \, f_i \, c^2 \, )$ se conservan [ y la fuerza einsteniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} = d\mathbf{P}/dt \, )$ siempre \hbox {es cero ]}
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Referencias \& Bibliografía}}\addcontentsline{toc}{subsection}{Referencias \& Bibliografía}\hypertarget{ref}{}
+
+\bigskip \smallskip
+
+\par \noindent [\,1\,] \textbf{A. Tobla}, Una Reformulación de la Relatividad Especial, (2024)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://n2t.net/ark:/13960/s2243szmz8w}{\texttt{ark}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\,2\,] \textbf{A. Blato}, Relatividad Especial \& Segunda Ley de Newton, (2016)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://n2t.net/ark:/13960/t3mw66d85}{\texttt{ark}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\,3\,] \textbf{A. Blato}, Una Nueva Dinámica en Relatividad Especial, (2016)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://n2t.net/ark:/13960/t1ng8dm8q}{\texttt{ark}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\,4\,] \textbf{C. M{\o}ller}, La Teoría de Relatividad, (1952)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.063em}{\small A}\hspace{+0.063em}] \textbf{W\hspace{-0.18em}. Pauli},\hspace{+0.09em} Teoría de Relatividad,\hspace{+0.09em} (1958)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.093em}{\small B}\hspace{+0.093em}] \textbf{A. \hspace{-0.09em}French}, Relatividad Especial, \hspace{-0.09em}(1968)\hspace{+0.09em}.
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Anexo I}}\hypertarget{an1}{}
+
+\par \bigskip {\centering\subsection*{Tensor de M{\o}ller}}\addcontentsline{toc}{subsection}{Anexo I : Tensor de M{\o}ller}
+
+\bigskip \smallskip
+
+\noindent El tensor de M{\o}ller ($\mathbf{M}$) y la fuerza m{\o}lleriana neta ($\mathbf{F}\mathrm{\scriptscriptstyle{M}}$) pueden ser obtenidos a partir de la fuerza einsteniana neta ($\mathbf{F}\mathrm{\scriptscriptstyle{E}}$) actuando sobre una partícula masiva con masa en reposo ($m_o$)
+\par \vspace{+0.30em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} + \frac{(\mathbf{a} \cdot \mathbf{v}) \: \mathbf{v}}{c^2\hspace{-0.15em}\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{3/2}}} \; \right ] ~=~ \mathbf{F}\mathrm{\scriptscriptstyle{E}}
+\end{eqnarray}
+\vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a} \cdot \mathbf{v}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} + \frac{(\mathbf{a} \cdot \mathbf{v}) \: (\mathbf{v} \cdot \mathbf{v})}{c^2\hspace{-0.15em}\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{3/2}}} \; \right ] ~=~ \mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot \mathbf{v}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{(\mathbf{a} \cdot \mathbf{v}) \: \mathbf{v}}{c^2\hspace{-0.15em}\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} + \frac{(\mathbf{a} \cdot \mathbf{v}) \: (\mathbf{v} \cdot \mathbf{v}) \: \mathbf{v}}{c^{\hspace{+0.045em}4}\hspace{-0.15em}\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{3/2}}} \; \right ] ~=~ \frac{(\mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot \mathbf{v}) \: \mathbf{v}}{c^2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} \; \right ] ~=~ \mathbf{F}\mathrm{\scriptscriptstyle{E}} - \frac{(\mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot \mathbf{v}) \: \mathbf{v}}{c^2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} \; \right ] ~=~ \mathbf{1} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}} - \frac{(\mathbf{v} \otimes \mathbf{v}) \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}}{c^2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} \; \right ] ~=~ \left [ \; \mathbf{1} - \frac{(\mathbf{v} \otimes \mathbf{v})}{c^2} \; \right ] \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} \; \right ] ~=~ \mathbf{M} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\begin{eqnarray}
+m_o \left [ \; \frac{\mathbf{a}}{\left(1 - \frac{v^2}{c^2}\right)^{\hspace{-0.12em}{1/2}}} \; \right ] ~=~ \mathbf{F}\mathrm{\scriptscriptstyle{M}}
+\end{eqnarray}
+\par \vspace{+1.50em}
+\noindent Nota : $\mathbf{F}\mathrm{\scriptscriptstyle{E}} = \mathbf{1} \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ (\hspace{+0.06em}$\mathbf{1}$ tensor unitario\hspace{+0.06em}) y $( \mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot \mathbf{v} ) \: \mathbf{v} = ( \mathbf{v} \otimes \mathbf{v} ) \cdot \mathbf{F}\mathrm{\scriptscriptstyle{E}}$ \hbox {(\hspace{+0.06em}$\otimes$ producto tensorial o diádico\hspace{+0.06em})}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Anexo II}}
+
+\par \bigskip {\centering\subsection*{Fuerzas Cinéticas}}\addcontentsline{toc}{subsection}{Anexo II : Fuerzas Cinéticas}
+
+\bigskip \smallskip
+
+\noindent La fuerza cinética $\mathbf{K}^{a}_{\hspace{+0.012em}ij}$ ejercida sobre una partícula $i$ con masa intrínseca $m_i$ por otra partícula $j$ con masa intrínseca $m_j$, \hbox {está dada por}:
+\par \vspace{-0.54em}
+\begin{eqnarray}
+\mathbf{K}^{a}_{\hspace{+0.012em}ij} \,=\, - \; \Bigg [ \; \dfrac{m_i \, m_j}{\mathbb{M}} \, ( \, \bar{\mathbf{a}}_{\hspace{+0.045em}i} \hspace{+0.045em}-\, \bar{\mathbf{a}}_{j} \, ) \; \Bigg ]
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $\bar{\mathbf{a}}_{\hspace{+0.045em}i}$ es la aceleración especial de la partícula $i$, $\bar{\mathbf{a}}_{j}$ es la aceleración especial de la partícula $j$ y $\mathbb{M}$ {\small ( $ = \sum_z^{\scriptscriptstyle{\mathit{All}}} m_z$ )} es la suma de las masas intrínsecas de todas las partículas del Universo.
+\par \vspace{+0.60em}
+\noindent Por otro lado, la fuerza cinética $\mathbf{K}^{u}_{\hspace{+0.030em}i}$ ejercida sobre una partícula $i$ con masa intrínseca $m_i$ por el Universo, está dada por:
+\par \vspace{-0.45em}
+\begin{eqnarray}
+\mathbf{K}^{u}_{\hspace{+0.030em}i} \,=\, - \; m_i \; \dfrac{\sum_z^{\scriptscriptstyle{\mathit{All}}} m_z \, \bar{\mathbf{a}}_{\hspace{+0.045em}z}}{\sum_z^{\scriptscriptstyle{\mathit{All}}} m_z}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $m_z$ y $\bar{\mathbf{a}}_{\hspace{+0.045em}z}$ son la masa intrínseca y la aceleración especial de la \textit{z}-ésima partícula del Universo.
+\par \vspace{+0.60em}
+\noindent De las ecuaciones anteriores se deduce que la fuerza cinética neta $\mathbf{K}_i$ {\small ( $ = \sum_j^{\scriptscriptstyle{\mathit{All}}} \, \mathbf{K}^{a}_{\hspace{+0.012em}ij}$} {\small $+ \; \mathbf{K}^{u}_{\hspace{+0.030em}i}$ )} que actúa sobre una partícula $i$ con masa intrínseca $m_i$, está dada por:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+\mathbf{K}_i \,=\, - \, m_i \, \bar{\mathbf{a}}_{\hspace{+0.045em}i}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $\bar{\mathbf{a}}_{\hspace{+0.045em}i}$ es la aceleración especial de la partícula $i$.
+\par \vspace{+0.60em}
+\noindent Ahora, desde todas las dinámicas $[ \, \hyperlink{efe}{(10)}, \hyperlink{efn}{(18)}, \hyperlink{efp}{(26)}, \hyperlink{efm}{(34)} \, ]$ se tiene:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+\mathbf{F}_i \,=\, m_i \, \bar{\mathbf{a}}_{\hspace{+0.045em}i}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent Dado que {\small (\hspace{+0.240em}$\mathbf{K}_i \,=\, - \, m_i \, \bar{\mathbf{a}}_{\hspace{+0.045em}i}$\hspace{+0.240em})} se obtiene:
+\par \vspace{-0.81em}
+\begin{eqnarray}
+\mathbf{F}_i \,=\, - \, \mathbf{K}_i
+\end{eqnarray}
+\par \vspace{+0.30em}
+\noindent o sea:
+\par \vspace{-0.81em}
+\begin{eqnarray}
+\mathbf{K}_i \, + \, \mathbf{F}_i \,=\, 0
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent Si {\small (\hspace{+0.240em}$\mathbf{T}_i \,\doteq\, \mathbf{K}_i \, + \, \mathbf{F}_i$\hspace{+0.240em})} entonces:
+\par \vspace{-0.81em}
+\begin{eqnarray}
+\mathbf{T}_i \,=\, 0
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent Por lo tanto, si la fuerza cinética neta $\mathbf{K}_i$ es incluida en todas las dinámicas entonces la fuerza total $\mathbf{T}_i$ que actúa sobre una ( masiva o no masiva ) partícula $i$ es siempre cero.
+\par \vspace{+0.21em}
+\noindent Nota : Las fuerzas cinéticas ${\stackrel{\scriptstyle{au}}{\smash{\mathbf{K}}\rule{0pt}{+0.63em}}}$ están directamente relacionadas con la energía cinética $\mathrm{K}$.
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Anexo III}}
+
+\par \bigskip {\centering\subsection*{Sistema de Partículas}}\addcontentsline{toc}{subsection}{Anexo III : Sistema de Partículas}
+
+\bigskip \smallskip
+
+\noindent En relatividad especial, la energía total $( \, \mathrm{E} \, )$ el momento lineal $( \, \mathbf{P} \, )$ la masa en reposo $( \, \mathrm{M}_o \, )$ y la velocidad $( \, \mathbf{V} \, )$ de un sistema ( de partículas ) masivo o no masivo, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{E} \hspace{-0.06em}~\doteq~ \sum \, m_i \, f_i \, c^2 + \sum \, \mathrm{E_{nki}}
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ \sum \, m_i \, f_i \, \mathbf{v}_i
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+\mathrm{M}_o^2 \, c^4 \hspace{-0.06em}~\doteq~ \mathrm{E}^2 - \mathbf{P}^2 c^2
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+\mathbf{V} \hspace{-0.06em}~\doteq~ \mathbf{P} \: c^2 \, \mathrm{E}^{\scriptscriptstyle -1}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \, m_i, \: f_i, \: \mathbf{v}_i \, )$ son la masa intrínseca, el factor relativista y la velocidad de la \hbox {\textit{i}-ésima} partícula masiva o no masiva del sistema, $( \, \sum \, \mathrm{E_{nki}} \, )$ es la energía no cinética total del sistema y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{\mathrm{M}}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{\mathrm{F}}\hspace{+0.06em})$ de un sistema masivo ( compuesto por partículas masivas o partículas no masivas, o ambas a la vez ) \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+\mathrm{M} ~\doteq~ \mathrm{M}_o
+\end{eqnarray}
+\vspace{-0.90em}
+\begin{eqnarray}
+\mathrm{F} ~\doteq~ \Big ( 1 - \dfrac{\mathbf{V} \cdot \mathbf{V}}{c^2} \hspace{+0.15em} \Big )^{\hspace{-0.24em}-\hspace{+0.03em}1/2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \, \mathrm{M}_o \, )$ es la masa en reposo del sistema masivo, $( \, \mathbf{V} \, )$ es la velocidad del sistema masivo y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{\mathrm{M}}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{\mathrm{F}}\hspace{+0.06em})$ de un sistema no masivo ( compuesto sólo por partículas no masivas, todas con la misma velocidad vectorial $\mathbf{c}$ ) \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+\mathrm{M} ~\doteq~ \dfrac{h \, \kappa}{c^2}
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+\mathrm{F} ~\doteq~ \frac{1}{\kappa} \, \sum \, \nu_i
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \hspace{+0.33em} h \hspace{+0.33em} )$ es la constante de Planck, \hspace{+0.06em}$( \hspace{+0.30em} \nu_i \hspace{+0.30em} )$ es la frecuencia de la \textit{i}-ésima partícula no masiva del sistema no masivo, $( \, \kappa \, )$ es una constante universal positiva con dimensión de frecuencia y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent Un sistema masivo $( \, \mathrm{M}_o \ne 0 \, )$ es un sistema con masa en reposo no nula ( o un sistema cuya velocidad $\mathrm{V}$ en el vacío es menor que $c$ ) y un sistema no masivo $( \, \mathrm{M}_o = 0 \, )$ es un sistema con masa en reposo nula ( o un sistema cuya velocidad $\mathrm{V}$ en el vacío es $c$ )
+\par \vspace{+0.60em}
+\noindent Nota : La masa en reposo $( \, \mathrm{M}_o \, )$ y la masa intrínseca $( \, \mathrm{M} \, )$ son en general no aditivas y la masa relativista $( \, {\mathtt{M}} \, )$ de un sistema ( masivo o no masivo ) está dada por : \hbox {\hspace{-0.09em}( ${\mathtt{M}} ~\doteq~ \mathrm{M} \, \mathrm{F}$ )}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática Einsteniana}}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{\hspace{+0.12em}R}} \: )$ la velocidad especial $( \, \bar{\mathbf{V}} \, )$ y la aceleración especial $( \, \bar{\mathbf{A}} \, )$ de un sistema ( masivo o no masivo ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{\hspace{+0.12em}R}}\hspace{-0.24em} \hspace{+0.12em}~\doteq~ \int \mathrm{F} \, \mathbf{V} \; d\hspace{+0.012em}t
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{V}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{-0.09em}\bar{\mathbf{\hspace{+0.12em}R}}}{d\hspace{+0.012em}t} ~=~ \mathrm{F} \, \mathbf{V}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{A}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.03em}\bar{\mathbf{V}}}{d\hspace{+0.012em}t} ~=~ \mathrm{F} \, \dfrac{d\hspace{+0.03em}\mathbf{V}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{+0.03em}\mathrm{F}}{d\hspace{+0.012em}t} \, \mathbf{V}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, \mathrm{F} \, )$ es el factor relativista del sistema, $( \, \mathbf{V} \, )$ es la velocidad del sistema y $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em})
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Dinámica Einsteniana}}
+
+\bigskip \smallskip
+
+\noindent Sea un sistema ( masivo o no masivo ) con masa intrínseca $( \, \mathrm{M} \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ del sistema, el momento angular $( \, \mathbf{L} \, )$ del sistema, \hbox {la fuerza} einsteniana neta $( \, \mathbf{F} \, )$ que actúa sobre el sistema, el trabajo $( \, \mathrm{W} \, )$ realizado por las fuerzas einstenianas netas que actúan sobre el sistema, la energía cinética $( \, \mathrm{K} \, )$ del sistema y la energía total $( \, \mathrm{E} \, )$ del sistema, son:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ \sum \, \mathbf{p}_i ~=~ \sum \, m_i \, \bar{\mathbf{v}}_i ~=~ \sum \, m_i \, f_i \, \mathbf{v}_i ~=~ \mathrm{M} \, \bar{\mathbf{V}} ~=~ \mathrm{M} \, \mathrm{F} \, \mathbf{V}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \sum \, \mathbf{l}_{\hspace{+0.06em}i} ~=~ \sum \, \mathbf{r}_i \times \mathbf{p}_i ~=~ \sum \, m_i \; \mathbf{r}_i \times \bar{\mathbf{v}}_i ~=~ \sum \, m_i \, f_i \: \mathbf{r}_i \times \mathbf{v}_i
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{F} ~=~ \sum \, \mathbf{f}_{\hspace{+0.06em}i} ~=~ \sum \, \dfrac{d\hspace{+0.045em}\mathbf{p}_i}{d\hspace{+0.012em}t} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} ~=~ \mathrm{M} \, \bar{\mathbf{A}} ~=~ \mathrm{M} \, \bigg [ \, \mathrm{F} \, \dfrac{d\hspace{+0.03em}\mathbf{V}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{+0.03em}\mathrm{F}}{d\hspace{+0.012em}t} \, \mathbf{V} \, \bigg ]
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \sum \, \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \mathbf{f}_{\hspace{+0.06em}i} \cdot d\hspace{+0.036em}\mathbf{r}_i ~=~ \sum \, \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \dfrac{d\hspace{+0.045em}\mathbf{p}_i}{d\hspace{+0.012em}t} \cdot d\hspace{+0.036em}\mathbf{r}_i ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ \sum \, m_i \, f_i \, c^2
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{E} \hspace{-0.06em}~\doteq~ \sum \, m_i \, f_i \, c^2 + \sum \, \mathrm{E_{nki}} ~=~ \mathrm{K} + \sum \, \mathrm{E_{nki}} ~=~ \mathrm{M} \, \mathrm{F} \, c^2
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: m_i, \: f_i, \: \mathbf{r}_i, \: \mathbf{v}_i, \: \bar{\mathbf{v}}_i \: )$ son la masa intrínseca, el factor relativista, la posición, la velocidad y la velocidad especial de la \textit{i}-ésima partícula masiva o no masiva del sistema, $( \: \mathrm{F}, \: \mathbf{V}, \: \bar{\mathbf{V}}, \: \bar{\mathbf{A}} \: )$ son el factor relativista, la velocidad, la velocidad especial y la aceleración especial del sistema, $( \, \sum \, \mathrm{E_{nki}} \, )$ es la energía no cinética total del sistema, $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent {\small Nota : (\hspace{+0.15em}$\sum \, \mathrm{E_{nki}} \,=\, 0$\hspace{+0.15em}) en partícula masiva o no masiva $\rightarrow$ (\hspace{+0.15em}$\mathrm{E} \,=\, \mathrm{K}$\hspace{+0.15em}) en partícula masiva o no masiva.}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Apéndice A}}\addcontentsline{toc}{subsection}{Apéndice A : Cuadrifuerza Minkowskiana}\hypertarget{apa}{}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Cuadricinemática}}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Cinemática Minkowskiana}}
+
+\bigskip \smallskip
+
+\noindent La cuadriposición especial $( \, \mathsf{R} \, )$ la cuadrivelocidad especial $( \, \mathsf{U} \, )$ y la cuadriaceleración especial $( \, \mathsf{A} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathsf{R} \hspace{+0.00em}~\doteq~ \bigg ( \, c \, t \;\, , \; \mathbf{r} \, \bigg )
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\mathsf{U} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\mathsf{R}}{d\hspace{+0.012em}\tau} ~=~ \bigg ( \, f \, c \;\, , \; f \, \mathbf{v} \, \bigg )
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathsf{A} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\mathsf{U}}{d\hspace{+0.012em}\tau} ~=~ f \: \bigg ( \, \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, c \;\, , \; \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} + \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} \, f \, \bigg )
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{r} \, )$ es la posición de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula y $( \, \tau \, )$ es el tiempo propio de la partícula ( Nota : $d\tau \,=\, f^{\scriptscriptstyle -1} \: dt$ )
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Cuadridinámica}}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Dinámica Minkowskiana}}
+
+\bigskip \smallskip
+
+\noindent El cuadrimomento $( \, \mathbf{\overline{P}} \, )$ de una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ y la cuadrifuerza minkowskiana neta $( \, \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{M}} \, )$ que actúa sobre la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{\overline{P}} \hspace{-0.06em}~\doteq~ m \, \mathsf{U} ~=~ m \: \bigg ( \, f \, c \;\, , \; f \, \mathbf{v} \, \bigg )
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{\overline{F}}\mathrm{\scriptscriptstyle{M}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{\overline{P}}}{d\hspace{+0.012em}\tau} ~=~ m \, \mathsf{A} ~=~ m \: f \: \bigg ( \, \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, c \;\, , \; \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} + \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} \, f \, \bigg )
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \: f, \: \mathbf{v}, \: \mathsf{U}, \: \mathsf{A} \: )$ son el factor relativista, la velocidad, la cuadrivelocidad especial y la cuadriaceleración especial de la partícula, $( \, \tau \, )$ es el tiempo propio de la partícula y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.90em}
+\noindent En la cuadrimecánica minkowskiana ( es decir, en la cuadrimecánica ordinaria ) todos los cuadrivectores especiales $( \, \mathsf{R}, \: \mathsf{U}, \: \mathsf{A}, \: \mathbf{\overline{P}}, \: \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{M}} \, )$ son cuadrivectores ordinarios $( \, \mathbf{R}, \: \mathbf{U}, \: \mathbf{A}, \: \mathbf{P}, \: \mathbf{F} \, )$
+\par \vspace{+0.90em}
+\noindent Adicionalmente, en partícula masiva : $f$ es el factor de Lorentz $\gamma(\mathbf{v})$\hspace{+0.09em}.
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Apéndice B}}\addcontentsline{toc}{subsection}{Apéndice B : Cuadrifuerza Einsteniana}\hypertarget{apb}{}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Cuadricinemática}}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Cinemática Einsteniana}}
+
+\bigskip \smallskip
+
+\noindent La cuadriposición especial $( \, \mathsf{R} \, )$ la cuadrivelocidad especial $( \, \mathsf{U} \, )$ y la cuadriaceleración especial $( \, \mathsf{A} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathsf{R} \hspace{+0.00em}~\doteq~ \int \bigg ( \, f \, c \;\, , \; f \, \mathbf{v} \, \bigg ) \; d\hspace{+0.012em}t
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\mathsf{U} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\mathsf{R}}{d\hspace{+0.012em}t} ~=~ \bigg ( \, f \, c \;\, , \; f \, \mathbf{v} \, \bigg )
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathsf{A} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\mathsf{U}}{d\hspace{+0.012em}t} ~=~ \bigg ( \, \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, c \;\, , \; \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} + \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} \, f \, \bigg )
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula y $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em})
+
+\vspace{+0.60em}
+
+\par \bigskip {\centering\subsection*{Cuadridinámica}}
+
+\vspace{+0.00em}
+
+\par \bigskip {\centering\subsection*{Dinámica Einsteniana}}
+
+\bigskip \smallskip
+
+\noindent El cuadrimomento $( \, \mathbf{\overline{P}} \, )$ de una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ y la cuadrifuerza einsteniana neta $( \, \mathbf{\overline{F}}\mathrm{\scriptscriptstyle{E}} \, )$ que actúa sobre la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{\overline{P}} \hspace{-0.06em}~\doteq~ m \, \mathsf{U} ~=~ m \: \bigg ( \, f \, c \;\, , \; f \, \mathbf{v} \, \bigg )
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{\overline{F}}\mathrm{\scriptscriptstyle{E}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{\overline{P}}}{d\hspace{+0.012em}t} ~=~ m \: \mathsf{A} ~=~ m \, \bigg ( \, \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, c \;\, , \; \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} + \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} \, f \, \bigg )
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \: f, \: \mathbf{v}, \: \mathsf{U}, \: \mathsf{A} \: )$ son el factor relativista, la velocidad, la cuadrivelocidad especial y la cuadriaceleración especial de la partícula, $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.90em}
+\noindent En la cuadrimecánica einsteniana, la cuadrivelocidad especial $( \, \mathsf{U} \, )$ es la cuadrivelocidad \hbox {ordinaria} $( \, \mathbf{U} \, )$ y, por lo tanto, el cuadrimomento $( \, \mathbf{\overline{P}} \, )$ es el cuadrimomento ordinario $( \, \mathbf{P} \, )$\hspace{+0.03em}.
+\par \vspace{+0.90em}
+\noindent Adicionalmente, en partícula masiva : $f$ es el factor de Lorentz $\gamma(\mathbf{v})$\hspace{+0.09em}.
+
+\end{document}
+

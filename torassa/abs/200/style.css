@@ -3,13 +3,17 @@ border: 0;
 margin: 0;
 padding: 0;
 outline: 0;
+list-style: none;
+list-style-type:none;
+text-decoration: none;
+box-sizing: border-box;
+font-family: ui-sans-serif, Arial, Helvetica, sans-serif;
 }
 
 body {
 color: #333;
 text-align: left;
 background-color: #fff;
-font-family: Arial, Helvetica, sans-serif;
 }
 
 div.main {
@@ -73,6 +77,14 @@ color: #336699;
 color: #666;
 }
 
+.split {
+display: inline;
+}
+
+.break {
+display: none;
+}
+
 a:link {
 color: #c63636;
 text-decoration: none;
@@ -114,10 +126,19 @@ pointer-events: none;
 cursor: default;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 510px) {
 
 div.main {
 padding: 0 0.75em;
+}
+
+.split {
+display: block;
+margin-top: 0.09em;
+}
+
+.break {
+display: inline;
 }
 
 }

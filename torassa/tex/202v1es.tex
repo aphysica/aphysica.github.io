@@ -1,0 +1,271 @@
+
+\documentclass[10pt,fleqn]{article}
+%\documentclass[a4paper,10pt]{article}»
+%\documentclass[letterpaper,10pt]{article}
+
+%\usepackage[dvips]{geometry}
+%\geometry{papersize={162.0mm,234.0mm}}
+%\geometry{totalwidth=141.0mm,totalheight=198.0mm}
+\usepackage[papersize={162.0mm,234.0mm},totalwidth=141.0mm,totalheight=198.0mm]{geometry}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+%\usepackage{mathptmx}
+%\usepackage{pslatex}
+%\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\frenchspacing
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,bookmarksopen=true}
+\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseOutlines}
+%\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseNone}
+\hypersetup{pdftitle={Relatividad Especial: Centro de Masa-Energía}}
+\hypersetup{pdfauthor={A. Torassa}}
+
+\setlength{\arraycolsep}{1.74pt}
+
+\newcommand{\vet}{\smallskip}
+\newcommand{\vek}{\bigskip \medskip}
+
+%\ccl Atribución 4.0 Internacional Licencia
+%\cct Atribución 4.0 Internacional Licencia
+%\newcommand{\ccl}{${\large{\textcircled{\raisebox{+0.8pt}{{\scriptsize{{\textsf{cc}}}}}}}}$\;}
+%\newcommand{\cct}{${\normalsize{\textcircled{\raisebox{+1.00pt}{{\tiny{{\texttt{cc}}}}}}}}$\;}
+
+\newcommand{\med}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+\newcommand{\met}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+\newcommand{\cte}{constante}
+
+\begin{document}
+
+\enlargethispage{+0.00em}
+
+\addcontentsline{toc}{section}{Relatividad Especial: Centro de Masa-Energía}
+
+\begin{center}
+
+{\Large Relatividad Especial: Centro de Masa-Energía}
+
+\vek
+
+{\large A. Torassa}
+
+\vek
+
+\small
+
+Licencia Creative Commons Atribución 4.0
+
+\vet
+
+\href{https://orcid.org/0000-0002-1389-247X}{\scriptsize{ORCID}} \S \ (2025) Buenos Aires
+%\href{https://orcid.org/0000-0002-1389-247X}{\normalsize{\textsc{orcid}}} \S \ (2025) Buenos Aires
+
+\vet
+
+Argentina
+
+\bigskip \bigskip
+
+\parbox{102.00mm}{En relatividad especial, este trabajo presenta una definición de centro de masa-energía para un sistema de partículas (masivas y/o no masivas) Consecuentemente, un nuevo principio de conservación es obtenido, el cual depende de la variación temporal de la energía relativista (potencia) y el vector de posición de las partículas del sistema.}
+
+\end{center}
+
+\normalsize
+
+\vspace{-1.20em}
+
+\par \bigskip {\centering\subsection*{Introducción}}\addcontentsline{toc}{subsection}{Introducción}
+
+\bigskip \smallskip
+
+\noindent En relatividad especial, este trabajo se desarrolla a partir de las definiciones esenciales de masa intrínseca ( o masa invariante ) y factor relativista ( o factor frecuencia ) para partículas masivas y partículas no masivas.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{m}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{f}\hspace{+0.06em})$ de una partícula masiva, \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ m_o
+\end{eqnarray}
+\vspace{-0.90em}
+\begin{eqnarray}
+f ~\doteq~ \Big ( 1 - \dfrac{\mathbf{v} \cdot \mathbf{v}}{c^2} \hspace{+0.15em} \Big )^{\hspace{-0.24em}-\hspace{+0.03em}1/2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \, m_o \, )$ es la masa en reposo de la partícula masiva, $( \, \mathbf{v} \, )$ es la velocidad de la partícula masiva y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent La masa intrínseca $(\hspace{+0.06em}{m}\hspace{+0.06em})$ y el factor relativista $(\hspace{+0.06em}{f}\hspace{+0.06em})$ de una partícula no masiva, \hbox {están dados por}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ \dfrac{h \, \kappa}{c^2}
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+f ~\doteq~ \dfrac{\nu}{\kappa}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent donde $( \hspace{+0.33em} h \hspace{+0.33em} )$ es la constante de Planck, \hspace{+0.06em}$( \hspace{+0.30em} \nu \hspace{+0.30em} )$ es la frecuencia de la partícula no masiva, $( \, \kappa \, )$ es una constante universal positiva con dimensión de frecuencia y $( \, c \, )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.60em}
+\noindent Según este trabajo, una partícula masiva $( \, m_o \ne 0 \, )$ es una partícula con masa en reposo no nula ( o una partícula cuya velocidad $v$ en el vacío es menor que $c$ ) y una partícula no masiva $( \, m_o = 0 \, )$ es una partícula con masa en reposo nula ( o una partícula cuya velocidad $v$ en el vacío es $c$ )
+\par \vspace{+0.60em}
+\noindent Nota : La masa en reposo $( \, m_o \, )$ y la masa intrínseca $( \, m \, )$ son en general no aditivas y la masa relativista $( \, {\mathrm{m}} \, )$ de una partícula ( masiva o no masiva ) está dada por : \hbox {\hspace{-0.09em}( ${\mathrm{m}} ~\doteq~ m \, f$ )}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Cinemática Einsteniana}}\addcontentsline{toc}{subsection}{Cinemática Einsteniana}
+
+\bigskip \smallskip
+
+\noindent La posición especial $( \, \bar{\mathbf{r}} \, )$ la velocidad especial $( \, \bar{\mathbf{v}} \, )$ y la aceleración especial $( \, \bar{\mathbf{a}} \, )$ de una partícula ( masiva o no masiva ) están dadas por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \int f \, \mathbf{v} \; d\hspace{+0.012em}t
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}t} ~=~ f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}t} ~=~ f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent donde $( \, f \, )$ es el factor relativista de la partícula, $( \, \mathbf{v} \, )$ es la velocidad de la partícula y $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em})
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{Dinámica Einsteniana}}\addcontentsline{toc}{subsection}{Dinámica Einsteniana}
+
+\bigskip \smallskip
+
+\noindent Sea una partícula ( masiva o no masiva ) con masa intrínseca $( \, m \, )$ entonces el \hbox {momento} lineal $( \, \mathbf{P} \, )$ de la partícula, el momento angular $( \, \mathbf{L} \, )$ de la partícula, \hbox {la fuerza} einsteniana neta $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ que actúa sobre la partícula, el trabajo $( \, \mathrm{W} \, )$ realizado por la fuerza einsteniana neta que actúa sobre la partícula y la energía cinética $( \, \mathrm{K} \, )$ de la partícula, están dados por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \, f \: \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{E}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, \bigg [ \, f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} \, \bigg ]
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ m \, f \, c^2
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: f, \: \mathbf{r}, \: \mathbf{v}, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ son el factor relativista, la posición, la velocidad, la velocidad especial y la aceleración especial de la partícula, $( \, t \, )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) y $( \, c \, )$ es la velocidad de la luz en el vacío. La energía cinética $( \, \mathrm{K}_o \, )$ de una partícula masiva en reposo es $( \, m_o \, c^2 \, )$ puesto que en esta dinámica la energía relativista $( \, \mathrm{E} \,\doteq\, m_o \, c^2 \, (\,f - 1\,) + m_o \, c^2 \, )$ y la energía cinética $( \, \mathrm{K} \,\doteq\, m \, f \, c^2 \, )$ son lo mismo $( \, \mathrm{E} \,=\, \mathrm{K} \, )$ \hyperlink{ref}{[\,1\,]}
+\par \vspace{+0.60em}
+\noindent {\small Nota :} {\footnotesize $\mathrm{E}^2 - \mathbf{P}^2 c^2 = m^2 \, f^2 \, c^4 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em})$} {\small [ en partícula masiva :} {\footnotesize $f^2 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 1$ \hspace{+0.12em}$\rightarrow$\hspace{+0.12em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = {m_o}^2 c^4$}} \;y\; $m \ne 0$} {\small ]} \; {\footnotesize\&} \; {\small [ en partícula no masiva :} {\footnotesize $\mathbf{v}^2 = c^2$ \hspace{+0.36em}$\rightarrow$\hspace{+0.36em} $(\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 0$ \hspace{+0.36em}$\rightarrow$\hspace{+0.36em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = 0$ \, y \, $m \ne 0$} {\small \:]}}}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Sistema de Partículas}}\addcontentsline{toc}{subsection}{Sistema de Partículas}
+
+\bigskip \smallskip
+
+\noindent Un sistema masivo es un sistema compuesto por partículas masivas, partículas no masivas, o ambas a la vez.
+\par \vspace{+0.60em}
+\noindent Un sistema no masivo es un sistema compuesto sólo por partículas no masivas ( todas con la misma velocidad vectorial $\mathbf{c}$ )
+\par \vspace{+0.60em}
+\noindent Un sistema masivo es un sistema con masa en reposo no nula ( o un sistema cuya velocidad en el vacío es menor que $c$ ) y un sistema no masivo es un sistema con masa en reposo nula ( o un sistema cuya velocidad en el vacío es $c$ ) \hyperlink{ref}{[\,2\,]}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{Centro de Masa-Energía}}\addcontentsline{toc}{subsection}{Centro de Masa-Energía}
+
+\bigskip \smallskip
+
+\noindent El centro de masa-energía de un sistema masivo o no masivo, está dado por:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;\doteq~ \dfrac{\sum \, m_i \, f_i \; \mathbf{r}_i}{\sum \, m_i \, f_i}
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;=~ \dfrac{\sum \, \mathrm{E}_{\hspace{+0.06em}i} \: \mathbf{r}_i}{\sum \, \mathrm{E}_{\hspace{+0.06em}i}}
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: m, \, f, \: \mathbf{r}, \: \mathrm{E} \: )$ son la masa intrínseca, el factor relativista, la posición y la energía relativista de la \textit{i}-ésima partícula masiva o no masiva del sistema masivo o no masivo.
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{El Sistema Copernicano}}\addcontentsline{toc}{subsection}{El Sistema Copernicano}
+
+\bigskip \smallskip
+
+\noindent El momento lineal $( \, \mathbf{P} \, )$ y el centro de masa-energía $( \, \mathbf{R}_{cm} \, )$ de un sistema masivo son siempre cero respecto al sistema de referencia denominado sistema copernicano ( o sistema central )
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \;=\; \sum \, m_i \, f_i \; \mathbf{v}_i \;=\; 0
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;=\; \dfrac{\sum \, m_i \, f_i \; \mathbf{r}_i}{\sum \, m_i \, f_i} \;=\; 0
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent Por lo tanto, el centro de masa-energía de un sistema masivo coincide siempre con el origen de su sistema copernicano.
+\par \vspace{+0.90em}
+\noindent Según este trabajo, si un sistema masivo es un sistema aislado con respecto a su sistema copernicano entonces el sistema copernicano es un sistema de referencia inercial.
+\par \vspace{+0.90em}
+\noindent {\small Nota :} {\footnotesize $( \, \mathbf{R}_{cm} = \sum \, m_i \, f_i \, \mathbf{r}_i \hspace{+0.09em}/\hspace{-0.09em} \sum \, m_i \, f_i \, )$} {\small puede ser siempre cero respecto al sistema copernicano solamente si} {\footnotesize $( \, \sum \, m_i \, f_i \, \mathbf{r}_i \, )$} {\small es siempre cero respecto al sistema copernicano.}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Principio de Conservación}}\addcontentsline{toc}{subsection}{Principio de Conservación}
+
+\bigskip \smallskip
+
+\noindent La potencia posición $( \, \mathbf{Q} \, )$ de un sistema masivo aislado ( respecto a su \hbox {sistema copernicano )} permanece constante respecto a su sistema copernicano.
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{Q} \;=\; \sum \, m_i \, \dfrac{d\hspace{-0.12em}f_i}{d\hspace{+0.012em}t} \; c^2 \; \mathbf{r}_i \;=\; \mathrm{\cte}
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{Q} \;=\; \sum \, \dfrac{d\hspace{+0.03em}\mathrm{E}_{\hspace{+0.06em}i}}{d\hspace{+0.012em}t} \; \mathbf{r}_i \;=\; \mathrm{\cte}
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent donde $( \: f, \: \mathbf{r}, \: \mathrm{E} \: )$ son el factor relativista, la posición y la energía relativista de la \textit{i}-ésima partícula masiva o no masiva del sistema masivo respecto a su sistema copernicano, $( \, m \, )$ es la masa intrínseca de la \textit{i}-ésima partícula masiva o no masiva del sistema masivo, $( \: t \: )$ es el tiempo (\hspace{+0.15em}coordenado\hspace{+0.15em}) del sistema copernicano y $( \: c \: )$ es la velocidad de la luz en el vacío.
+\par \vspace{+0.90em}
+\noindent {\small Nota :} {\footnotesize $d(\sum m_i \, f_i \, \mathbf{r}_i)/(dt) = \sum m_i \, f_i \, \mathbf{v}_i + \sum m_i \, (d\hspace{-0.12em}f_i/dt) \, \mathbf{r}_i. \; ( \; \sum m_i \, f_i \, \mathbf{v}_i = 0 \; ) \; \& \; ( \; d(\sum m_i \, f_i \, \mathbf{r}_i)/(dt) = 0 \; )$ {\small respecto al sistema copernicano, por lo tanto :} $( \; \sum m_i \, (d\hspace{-0.12em}f_i/dt) \, \mathbf{r}_i = 0 \; )$} {\small respecto al sistema copernicano.}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{Observaciones Generales}}\addcontentsline{toc}{subsection}{Observaciones Generales}
+
+\bigskip \smallskip
+
+\noindent Según este trabajo, las ecuaciones de la relatividad especial toman su forma más sencilla en el sistema copernicano cuando el sistema copernicano es un sistema de referencia inercial. Por lo tanto, en relatividad especial, el sistema copernicano es un sistema de referencia privilegiado ( entre los sistemas de referencia inerciales ) para el estudio de un sistema masivo aislado.
+\par \medskip \smallskip
+\noindent Adicionalmente, si el sistema copernicano es un sistema de referencia inercial y además es considerado como el sistema auxiliar entonces las ecuaciones válidas en el sistema copernicano pueden ser generalizadas a los demás sistemas de referencia inerciales y también a los sistemas de referencia no inerciales \hyperlink{ref}{[\,1\,]}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{Referencias \& Bibliografía}}\addcontentsline{toc}{subsection}{Referencias \& Bibliografía}\hypertarget{ref}{}
+
+\bigskip \smallskip
+
+\par \noindent [\,1\,] \textbf{A. Tobla}, Una Reformulación de la Relatividad Especial, (2024)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://n2t.net/ark:/13960/s2243szmz8w}{\texttt{ark}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\,2\,] \textbf{A. Torassa}, Relatividad Especial: Tipos de Fuerzas, (2024)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://n2t.net/ark:/13960/s24fkhqgvb3}{\texttt{ark}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\hspace{+0.063em}{\small A}\hspace{+0.063em}] \textbf{C. M{\o}ller}, La Teoría de Relatividad, (1952)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.093em}{\small B}\hspace{+0.093em}] \textbf{W\hspace{-0.18em}. Pauli},\hspace{+0.09em} Teoría de Relatividad,\hspace{+0.09em} (1958)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.063em}{\small C}\hspace{+0.063em}] \textbf{A. \hspace{-0.09em}French}, Relatividad Especial, \hspace{-0.09em}(1968)\hspace{+0.09em}.
+
+\end{document}

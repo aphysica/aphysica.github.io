@@ -1,0 +1,271 @@
+
+\documentclass[10pt,fleqn]{article}
+%\documentclass[a4paper,10pt]{article}»
+%\documentclass[letterpaper,10pt]{article}
+
+%\usepackage[dvips]{geometry}
+%\geometry{papersize={162.0mm,234.0mm}}
+%\geometry{totalwidth=141.0mm,totalheight=198.0mm}
+\usepackage[papersize={162.0mm,234.0mm},totalwidth=141.0mm,totalheight=198.0mm]{geometry}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+%\usepackage{mathptmx}
+%\usepackage{pslatex}
+%\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%\frenchspacing
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,bookmarksopen=true}
+\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseOutlines}
+%\hypersetup{bookmarksnumbered=true,pdfstartview=FitH,pdfpagemode=UseNone}
+\hypersetup{pdftitle={Special Relativity: Center of Mass-Energy}}
+\hypersetup{pdfauthor={A. Torassa}}
+
+\setlength{\arraycolsep}{1.74pt}
+
+\newcommand{\vet}{\smallskip}
+\newcommand{\vek}{\bigskip \medskip}
+
+%\ccl Attribution 4.0 International License
+%\cct Attribution 4.0 International License
+%\newcommand{\ccl}{${\large{\textcircled{\raisebox{+0.8pt}{{\scriptsize{{\textsf{cc}}}}}}}}$\;}
+%\newcommand{\cct}{${\normalsize{\textcircled{\raisebox{+1.00pt}{{\tiny{{\texttt{cc}}}}}}}}$\;}
+
+\newcommand{\med}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+\newcommand{\met}{\raise.5ex\hbox{$\scriptstyle 1$}\kern-.15em/\kern-.09em\lower.25ex\hbox{$\scriptstyle 2$}}
+\newcommand{\cte}{constant}
+
+\begin{document}
+
+\enlargethispage{+0.00em}
+
+\addcontentsline{toc}{section}{Special Relativity: Center of Mass-Energy}
+
+\begin{center}
+
+{\Large Special Relativity: Center of Mass-Energy}
+
+\vek
+
+{\large A. Torassa}
+
+\vek
+
+\small
+
+Creative Commons Attribution 4.0 License
+
+\vet
+
+\href{https://orcid.org/0000-0002-1389-247X}{\scriptsize{ORCID}} \S \ (2025) Buenos Aires
+%\href{https://orcid.org/0000-0002-1389-247X}{\normalsize{\textsc{orcid}}} \S \ (2025) Buenos Aires
+
+\vet
+
+Argentina
+
+\bigskip \bigskip
+
+\parbox{96.00mm}{In special relativity, this paper presents the definition of center of mass-energy for a system of particles (massive and non-massive) Consequently, a new principle of conservation is obtained, which depends on the temporal variation of the relativistic energy (power) and the position vector of the particles of the system.}
+
+\end{center}
+
+\normalsize
+
+\vspace{-1.20em}
+
+\par \bigskip {\centering\subsection*{Introduction}}\addcontentsline{toc}{subsection}{Introduction}
+
+\bigskip \smallskip
+
+\noindent In special relativity, this paper is obtained starting from the essential definitions of intrinsic mass ( or invariant mass ) and relativistic factor ( or frequency factor ) for massive particles and non-massive particles.
+\par \vspace{+0.60em}
+\noindent The intrinsic mass $( \, m \, )$ and the relativistic factor $( \, f \, )$ of a massive particle, \hbox {are given by}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ m_o
+\end{eqnarray}
+\vspace{-0.90em}
+\begin{eqnarray}
+f ~\doteq~ \Big ( 1 - \dfrac{\mathbf{v} \cdot \mathbf{v}}{c^2} \hspace{+0.15em} \Big )^{\hspace{-0.24em}-\hspace{+0.03em}1/2}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent where $( \, m_o \, )$ is the rest mass of the massive particle, $( \, \mathbf{v} \, )$ is the velocity of the massive particle, and $( \, c \, )$ is the speed of light in vacuum.
+\par \vspace{+0.60em}
+\noindent The intrinsic mass $( \, m \, )$ and the relativistic factor $( \, f \, )$ of a non-massive particle, \hbox {are given by}:
+\par \vspace{-0.60em}
+\begin{eqnarray}
+m ~\doteq~ \dfrac{h \, \kappa}{c^2}
+\end{eqnarray}
+\vspace{-0.60em}
+\begin{eqnarray}
+f ~\doteq~ \dfrac{\nu}{\kappa}
+\end{eqnarray}
+\par \vspace{+0.60em}
+\noindent where $( \hspace{+0.33em} h \hspace{+0.33em} )$ is the Planck constant, \hspace{+0.06em}$( \hspace{+0.30em} \nu \hspace{+0.30em} )$ is the frequency of the \hbox {non-massive} particle, $( \, \kappa \, )$ is a positive universal constant with dimension of frequency\hspace{-0.03em}, and $( \, c \, )$ is the speed of light in vacuum.
+\par \vspace{+0.60em}
+\noindent According to this paper, a massive particle $( \, m_o \ne 0 \, )$ is a particle with non-zero rest mass \hbox {( or a particle} whose speed $v$ in vacuum is less than $c$ ) and a non-massive particle $( \, m_o = 0 \, )$ is a particle with zero rest mass ( or a particle whose speed $v$ in vacuum is $c$ )
+\par \vspace{+0.60em}
+\noindent Note : The rest mass $( \, m_o \, )$ and the intrinsic mass $( \, m \, )$ are in general not additive, and the relativistic mass $( \, {\mathrm{m}} \, )$ of a particle ( massive or non-massive ) is given by : \hbox {\hspace{-0.09em}( ${\mathrm{m}} ~\doteq~ m \, f$ )}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{The Einsteinian Kinematics}}\addcontentsline{toc}{subsection}{The Einsteinian Kinematics}
+
+\bigskip \smallskip
+
+\noindent The special position $( \, \bar{\mathbf{r}} \, )$ the special velocity $( \, \bar{\mathbf{v}} \, )$ and the special acceleration $( \, \bar{\mathbf{a}} \, )$ of a particle \hbox {( massive or non-massive )} are given by:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{r}} \hspace{+0.12em}~\doteq~ \int f \, \mathbf{v} \; d\hspace{+0.012em}t
+\end{eqnarray}
+\vspace{-0.45em}
+\begin{eqnarray}
+\bar{\mathbf{v}} \hspace{-0.03em}~\doteq~ \dfrac{d\hspace{+0.036em}\bar{\mathbf{r}}}{d\hspace{+0.012em}t} ~=~ f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\bar{\mathbf{a}} \hspace{+0.03em}~\doteq~ \dfrac{d\hspace{+0.021em}\bar{\mathbf{v}}}{d\hspace{+0.012em}t} ~=~ f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v}
+\end{eqnarray}
+\par \vspace{+1.20em}
+\noindent where $( \, f \, )$ is the relativistic factor of the particle, $( \, \mathbf{v} \, )$ is the velocity of the particle, and $( \, t \, )$ is the (\hspace{+0.15em}coordinate\hspace{+0.15em}) time.
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{The Einsteinian Dynamics}}\addcontentsline{toc}{subsection}{The Einsteinian Dynamics}
+
+\bigskip \smallskip
+
+\noindent If we consider a particle ( massive or non-massive ) with intrinsic mass $( \, m \, )$ then the \hbox {linear} momentum $( \, \mathbf{P} \, )$ of the particle, the angular momentum $( \, \mathbf{L} \, )$ of the particle, the net \hbox {Einsteinian} force $( \, \mathbf{F}\mathrm{\scriptscriptstyle{E}} \, )$ acting on the particle, the work $( \, \mathrm{W} \, )$ done by the net Einsteinian force acting on the particle, and the kinetic energy $( \, \mathrm{K} \, )$ of the particle, are given by:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \hspace{-0.06em}~\doteq~ m \, \bar{\mathbf{v}} ~=~ m \, f \, \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{L} \hspace{+0.03em}~\doteq~ \mathbf{r} \times \mathbf{P} ~=~ m \; \mathbf{r} \times \bar{\mathbf{v}} ~=~ m \, f \: \mathbf{r} \times \mathbf{v}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{F}\mathrm{\scriptscriptstyle{E}} ~=~ \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} ~=~ m \, \bar{\mathbf{a}} ~=~ m \, \bigg [ \, f \, \dfrac{d\hspace{+0.021em}\mathbf{v}}{d\hspace{+0.012em}t} + \dfrac{d\hspace{-0.12em}f}{d\hspace{+0.012em}t} \, \mathbf{v} \, \bigg ]
+\end{eqnarray}
+\vspace{-0.15em}
+\begin{eqnarray}
+\mathrm{W} \hspace{-0.312em}~\doteq~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \mathbf{F}\mathrm{\scriptscriptstyle{E}} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \hspace{-0.36em} \int_{\scriptscriptstyle 1}^{\hspace{+0.09em}{\scriptscriptstyle 2}} \dfrac{d\hspace{+0.045em}\mathbf{P}}{d\hspace{+0.012em}t} \cdot d\hspace{+0.036em}\mathbf{r} ~=~ \Delta \, \mathrm{K}
+\end{eqnarray}
+\vspace{-0.30em}
+\begin{eqnarray}
+\mathrm{K} \hspace{-0.06em}~\doteq~ m \, f \, c^2
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent where $( \: f, \: \mathbf{r}, \: \mathbf{v}, \: \bar{\mathbf{v}}, \: \bar{\mathbf{a}} \: )$ are the relativistic factor, the position, the velocity, the special velocity and the special acceleration of the particle, $( \, t \, )$ is the (\hspace{+0.15em}coordinate\hspace{+0.15em}) time, and $( \, c \, )$ is the speed of light in vacuum. The kinetic energy $( \, \mathrm{K}_o \, )$ of a massive particle at rest is $( \, m_o \, c^2 \, )$ since in this dynamics the relativistic energy $( \, \mathrm{E} \,\doteq\, m_o \, c^2 \, (\,f - 1\,) + m_o \, c^2 \, )$ and the kinetic energy $( \, \mathrm{K} \,\doteq\, m \, f \, c^2 \, )$ are the same $( \, \mathrm{E} \,=\, \mathrm{K} \, )$ \hyperlink{ref}{[\,1\,]}
+\par \vspace{+0.60em}
+\noindent {\small Note :} {\footnotesize $\mathrm{E}^2 - \mathbf{P}^2 c^2 = m^2 \, f^2 \, c^4 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em})$} {\small [ in massive particle :} {\footnotesize $f^2 \, (\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 1$ \hspace{+0.27em}$\rightarrow$\hspace{+0.27em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = {m_o}^2 c^4$}} \,and\, $m \ne 0$} {\small ]} \,{\footnotesize\&}\, {\small [ in non-massive particle :} {\footnotesize $\mathbf{v}^2 = c^2$ \hspace{+0.27em}$\rightarrow$\hspace{+0.27em} $(\hspace{+0.12em} 1 - \mathbf{v}^2/c^2 \hspace{+0.15em}) = 0$ \hspace{+0.27em}$\rightarrow$\hspace{+0.27em} \hbox {{$\mathrm{E}^2 - \mathbf{P}^2 c^2 = 0$ \:and\: $m \ne 0$} {\small ]}}}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{System of Particles}}\addcontentsline{toc}{subsection}{System of Particles}
+
+\bigskip \smallskip
+
+\noindent A massive system is a system composed of massive particles, non-massive particles, or both at the same time.
+\par \vspace{+0.60em}
+\noindent A non-massive system is a system composed only of non-massive particles ( all with the same vector velocity $\mathbf{c}$ )
+\par \vspace{+0.60em}
+\noindent A massive system is a system with non-zero rest mass ( or a system whose speed in vacuum is less than $c$ ) and a non-massive system is a system with zero rest mass ( or a system whose speed in vacuum is $c$ ) \hyperlink{ref}{[\,2\,]}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{Center of Mass-Energy}}\addcontentsline{toc}{subsection}{Center of Mass-Energy}
+
+\bigskip \smallskip
+
+\noindent The center of mass-energy of a massive or non-massive system, is given by:
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;\doteq~ \dfrac{\sum \, m_i \, f_i \; \mathbf{r}_i}{\sum \, m_i \, f_i}
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;=~ \dfrac{\sum \, \mathrm{E}_{\hspace{+0.06em}i} \: \mathbf{r}_i}{\sum \, \mathrm{E}_{\hspace{+0.06em}i}}
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent where $( m, f, \mathbf{r}, \mathrm{E}\hspace{+0.03em})$ are the intrinsic mass, the relativistic factor, the position and the \hbox {relativistic} energy of the \textit{i}-th massive or non-massive particle of the massive or \hbox {non-massive system.}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{The Copernican Frame}}\addcontentsline{toc}{subsection}{The Copernican Frame}
+
+\bigskip \smallskip
+
+\noindent The linear momentum $( \, \mathbf{P} \, )$ and the center of mass-energy $( \, \mathbf{R}_{cm} \, )$ of a massive system are always zero relative to the reference frame called the Copernican frame.
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{P} \;=\; \sum \, m_i \, f_i \; \mathbf{v}_i \;=\; 0
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{R}_{cm} \;=\; \dfrac{\sum \, m_i \, f_i \; \mathbf{r}_i}{\sum \, m_i \, f_i} \;=\; 0
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent Therefore, the center of mass-energy of a massive system always coincides with the origin of the Copernican frame.
+\par \vspace{+0.90em}
+\noindent According to this paper, if a massive system is an isolated system relative to the Copernican frame then the Copernican frame is an inertial reference frame.
+\par \vspace{+0.90em}
+\noindent {\small Note : The equation} {\footnotesize $( \; \mathbf{R}_{cm} = \sum \, m_i \, f_i \, \mathbf{r}_i \hspace{+0.09em}/\hspace{-0.09em} \sum \, m_i \, f_i \; )$} {\small is always zero relative to the Copernican frame only if} {\footnotesize $( \; \sum \, m_i \, f_i \, \mathbf{r}_i \; )$} {\small is always zero relative to the Copernican frame.}
+
+\newpage
+
+\par \bigskip {\centering\subsection*{Principle of Conservation}}\addcontentsline{toc}{subsection}{Principle of Conservation}
+
+\bigskip \smallskip
+
+\noindent The power position $( \, \mathbf{Q} \, )$ of an isolated massive system ( relative to the Copernican frame ) remains constant relative to the Copernican frame.
+\par \vspace{-0.30em}
+\begin{eqnarray}
+\mathbf{Q} \;=\; \sum \, m_i \, \dfrac{d\hspace{-0.12em}f_i}{d\hspace{+0.012em}t} \; c^2 \; \mathbf{r}_i \;=\; \mathrm{\cte}
+\end{eqnarray}
+\par \vspace{+0.30em}
+\begin{eqnarray}
+\mathbf{Q} \;=\; \sum \, \dfrac{d\hspace{+0.03em}\mathrm{E}_{\hspace{+0.06em}i}}{d\hspace{+0.012em}t} \; \mathbf{r}_i \;=\; \mathrm{\cte}
+\end{eqnarray}
+\par \vspace{+0.90em}
+\noindent where $( \: f, \: \mathbf{r}, \: \mathrm{E} \: )$ are the relativistic factor, the position and the relativistic energy of the \textit{i}-th massive or non-massive particle of the massive system relative to the Copernican frame, $( \, m \, )$ is the intrinsic mass of the \textit{i}-th massive or non-massive particle of the massive system, $( \: t \: )$ is the (\hspace{+0.15em}coordinate\hspace{+0.15em}) time of the Copernican frame, and $( \: c \: )$ is the speed of light in vacuum.
+\par \vspace{+0.90em}
+\noindent {\small Note :} {\footnotesize $d(\sum m_i \, f_i \, \mathbf{r}_i)/(dt) = \sum m_i \, f_i \, \mathbf{v}_i + \sum m_i \, (d\hspace{-0.12em}f_i/dt) \, \mathbf{r}_i. \; ( \; \sum m_i \, f_i \, \mathbf{v}_i = 0 \; ) \; \& \; ( \; d(\sum m_i \, f_i \, \mathbf{r}_i)/(dt) = 0 \; )$ {\small relative to the Copernican frame, therefore :} $( \; \sum m_i \, (d\hspace{-0.12em}f_i/dt) \, \mathbf{r}_i = 0 \; )$} {\small relative to the Copernican frame.}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{General Observations}}\addcontentsline{toc}{subsection}{General Observations}
+
+\bigskip \smallskip
+
+\noindent According to this paper, the equations of the special relativity take a simpler form in the Copernican frame when the Copernican frame is an inertial reference frame. Therefore, in special relativity, the Copernican frame is a privileged reference frame ( among the inertial reference frame ) for the study of an isolated massive system.
+\par \medskip \smallskip
+\noindent Additionally, if the Copernican frame is an inertial reference frame and is also considered as the auxiliary system, then the equations valid in the Copernican frame can be generalized to the other inertial reference frames and also to the non-inertial reference frames \hyperlink{ref}{[\,1\,]}
+
+\vspace{+0.90em}
+
+\par \bigskip {\centering\subsection*{References \& Bibliography}}\addcontentsline{toc}{subsection}{References \& Bibliography}\hypertarget{ref}{}
+
+\bigskip \smallskip
+
+\par \noindent [\,1\,] \textbf{A. Tobla}, A Reformulation of Special Relativity, (2024)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://doi.org/10.5281/zenodo.11466228}{\texttt{doi}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\,2\,] \textbf{A. Torassa}, Special Relativity: Types of Forces, (2024)\hspace{+0.09em}.\hspace{+0.09em}(\hspace{+0.09em}\href{https://doi.org/10.5281/zenodo.14275580}{\texttt{doi}}\hspace{+0.09em})
+\bigskip \smallskip
+\par \noindent [\hspace{+0.063em}{\small A}\hspace{+0.063em}] \textbf{C. M{\o}ller}, The Theory of Relativity, (1952)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.093em}{\small B}\hspace{+0.093em}] \textbf{W\hspace{-0.18em}. Pauli}, Theory of Relativity, (1958)\hspace{+0.09em}.
+\bigskip \smallskip
+\par \noindent [\hspace{+0.063em}{\small C}\hspace{+0.063em}] \textbf{A. French}, Special Relativity, (1968)\hspace{+0.09em}.
+
+\end{document}

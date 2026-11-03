@@ -1,0 +1,39 @@
+{
+  "title": "Physics Part 2 (2024-2052)",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Alejandro A. Torassa",
+      "orcid": "0000-0002-1389-247X"
+    }
+  ],
+  "description": "<p>A collection of articles about classical mechanics, relational mechanics, special relativity and general relativity.</p>\n<p>https://aphysica.github.io/</p>\n<p>Alejandro A. Torassa</p>\n<p>Antonio A. Blatter</p>\n<p>Agust&iacute;n A. Tobla</p>\n<p>Alfonso A. Blato</p>\n<p>doi:10/rwb8</p>\n<p>&nbsp;</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "languages": [
+    {
+      "id": "eng"
+    },
+    {
+      "id": "spa"
+    }
+  ],
+  "subjects": [
+    {"subject": "Physics"},
+    {"subject": "Classical Mechanics"},
+    {"subject": "Relational Mechanics"},
+    {"subject": "Special Relativity"},
+    {"subject": "General Relativity"},
+    {"subject": "Theoretical Physics"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23841148",
+      "relation": "continues",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    }
+  ]
+}
+

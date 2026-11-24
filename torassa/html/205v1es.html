@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Mecánica Clásica</title>
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="Alejandro A. Torassa">
+	<meta name="keywords" content="física, mecánica clásica, mecánica relacional">
+	<meta name="description" content="Un análisis lógico, epistemológico y ontológico de la mecánica clásica.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://aphysica.github.io/mecanica-clasica/">
+	<link rel="alternate" hreflang="es" href="https://aphysica.github.io/mecanica-clasica/">
+	<link rel="alternate" hreflang="en" href="https://aphysica.github.io/classical-mechanics/">
+	<link rel="alternate" hreflang="x-default" href="https://aphysica.github.io/classical-mechanics/">
+	<link rel="icon" href="../abs/200/favicon.svg">
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+	<script>
+		window.MathJax = {
+			loader: { load: ['ui/lazy'] },
+			options: {
+				lazyMargin: '800px'
+			},
+			tex: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']]
+			}
+		};
+	</script>
+	<script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<style>
+		*, *::before, *::after {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		h1, h2 {
+			margin: 0.83em 0;
+		}
+		h3, ul, p {
+			margin: 1em 0;
+		}
+		html {
+			font-size: 100%;
+			-webkit-text-size-adjust: 100%;
+			overflow-x: hidden;
+			overflow-x: clip;
+		}
+		body {
+			--color-bg: #ffffff;
+			--color-text: #454545;
+			--color-title: #4581b4;
+			--color-h2: #333333;
+			--color-strong: #151515;
+			--color-part: #363636;
+			--color-note: #c63636;
+			--color-border: #cccccc;
+			--color-link: #1b6ed6;
+
+			--font-family: 'Spectral', ui-serif, Georgia, serif;
+			--line-height: 1.4;
+			--fs-body: 125%;
+			--fs-title: 225%;
+			--fs-h2: 160%;
+			--fs-mathjax: 105%;
+
+			max-width: 75ch;
+			min-height: 100vh;
+			min-height: 100dvh;
+			margin: 0 auto;
+			padding: 0 1.5rem;
+			overflow-x: hidden;
+			overflow-x: clip;
+
+			font-family: var(--font-family);
+			line-height: var(--line-height);
+			background-color: var(--color-bg);
+			color: var(--color-text);
+			font-size: var(--fs-body);
+			text-align: justify;
+			-webkit-font-smoothing: antialiased;
+			transition: background-color 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+		}
+		body.dark-mode {
+			--color-bg: #303030;
+			--color-text: #dedede;
+			--color-title: #70a6d4;
+			--color-h2: #b2caf5;
+			--color-strong: #f2f2f2;
+			--color-part: #c7c7c7;
+			--color-note: #f28b82;
+			--color-border: #555555;
+			--color-link: #6ea8fe;
+		}
+		body.sans-serif {
+			--font-family: 'Poppins', ui-sans-serif, Arial, sans-serif;
+			--line-height: 1.5;
+			--fs-body: 108%;
+			--fs-title: 240%;
+			--fs-h2: 180%;
+			--fs-mathjax: 116.4%;
+		}
+		body.align-left {
+			text-align: left;
+		}
+		#myTitle, h2 {
+			text-align: left;
+			text-wrap: balance;
+			transition: color 0.3s ease;
+		}
+		#myTitle {
+			padding-top: 0.6rem;
+			color: var(--color-title);
+			font-size: var(--fs-title);
+		}
+		h2 {
+			color: var(--color-h2);
+			font-size: var(--fs-h2);
+		}
+		[data-back-to-toc] {
+			cursor: pointer;
+			user-select: none;
+			-webkit-user-select: none;
+			-webkit-tap-highlight-color: transparent;
+		}
+		[data-back-to-toc]:hover::after {
+			content: " ↑";
+			font-size: 0.75em;
+			opacity: 0.6;
+		}
+		.strong {
+			color: var(--color-strong);
+		}
+		.part {
+			color: var(--color-part);
+		}
+		.note {
+			color: var(--color-note);
+			transition: color 0.3s ease;
+		}
+		a {
+			color: var(--color-link);
+			text-decoration: none;
+			word-break: break-word;
+			overflow-wrap: anywhere;
+		}
+		a:focus-visible,
+		.toolbar button:focus-visible {
+			outline: 2px solid var(--color-link);
+			outline-offset: 2px;
+			border-radius: 3px;
+		}
+		ul {
+			list-style: none;
+			margin: 1.2em 0;
+			padding-left: 0;
+		}
+		ul li {
+			position: relative;
+			padding-left: 0.9em;
+		}
+		ul li::before {
+			content: "•";
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 1.25em;
+			line-height: 1.1;
+			font-family: Arial, sans-serif;
+		}
+		.liver {
+			margin-bottom: 0.45em;
+		}
+		.livex {
+			margin-bottom: 0.93em;
+		}
+		mjx-container {
+			font-size: var(--fs-mathjax) !important;
+		}
+		.math-block {
+			display: block;
+			max-width: 100%;
+			text-align: left;
+			overflow-x: auto;
+			overflow-y: hidden;
+			overflow-y: clip;
+			padding: 0.35em 0;
+			overscroll-behavior-x: contain;
+		}
+		.toolbar {
+			display: grid;
+			grid-template-columns: repeat(8, 1fr);
+			gap: 0.5rem;
+			max-width: 32rem;
+			margin: 2.2em 0;
+		}
+		.toolbar button {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 2.25rem;
+			padding: 0 0.45rem;
+			background: transparent;
+			color: var(--color-text);
+			border: 1px solid var(--color-border);
+			border-radius: 4px;
+			font-family: inherit;
+			font-size: 0.95rem;
+			white-space: nowrap;
+			cursor: pointer;
+			opacity: 0.85;
+			-webkit-tap-highlight-color: transparent;
+			transition: opacity 0.2s ease, border-color 0.3s ease, transform 0.12s ease;
+		}
+		.toolbar .btn-wide {
+			grid-column: span 2;
+		}
+		@media (hover: hover) {
+			.toolbar button:hover {
+				opacity: 1;
+				border-color: var(--color-title);
+			}
+		}
+		.toolbar button:active {
+			opacity: 1;
+			border-color: var(--color-title);
+			transform: scale(0.97);
+		}
+		footer {
+			margin-top: 3em;
+			padding: 0.6em 0;
+			text-align: center;
+			border-top: 1px solid var(--color-border);
+		}
+		@media (max-width: 600px) {
+			body {
+				padding: 0 1rem;
+			}
+			.toolbar {
+				grid-template-columns: repeat(4, 1fr);
+				max-width: 17.5rem;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			body.align-left .toolbar {
+				margin-left: 0;
+				margin-right: 0;
+			}
+			#btnTheme { order: 1; }
+			#btnFont { order: 2; }
+			#btnAlign { order: 3; }
+			#btnReset { order: 4; }
+			#btnZoomOut { order: 5; }
+			#btnZoomIn { order: 6; }
+		}
+	</style>
+</head>
+<body>
+
+<script>
+	try {
+		if (localStorage.getItem("theme") === "dark") document.body.classList.add("dark-mode");
+		if (localStorage.getItem("font") === "sans") document.body.classList.add("sans-serif");
+		if (localStorage.getItem("align") === "left") document.body.classList.add("align-left");
+		const savedZoom = localStorage.getItem("zoom");
+		if (savedZoom) document.documentElement.style.fontSize = `${savedZoom}px`;
+	} catch (e) {}
+</script>
+
+<main>
+
+<article>
+
+<header>
+
+<h1 id="myTitle">Mecánica Clásica</h1>
+
+<p>Un análisis lógico, epistemológico y ontológico de la mecánica clásica.</p>
+
+<div class="toolbar">
+	<button id="btnTheme" class="btn-wide" type="button">Oscuro</button>
+	<button id="btnFont" class="btn-wide" type="button">Sans-serif</button>
+	<button id="btnZoomOut" type="button" title="Reducir letra">A−</button>
+	<button id="btnZoomIn" type="button" title="Aumentar letra">A+</button>
+	<button id="btnAlign" type="button" title="Cambiar alineación"></button>
+	<button id="btnReset" type="button" title="Restaurar valores">↺</button>
+</div>
+
+<p class="note"><i>17/11/2026 : Lo nuevo : Fuerzas de la Naturaleza, Tercera Ley de Newton, Segunda Ley de Newton, Anexos y Apéndices, y Primera Ley de Newton.</i></p>
+<p class="note"><i>Artículo en constante revisión y evolución, sin fecha de cierre aún.</i></p>
+<p class="note"><i>Autor: Alejandro A. Torassa (&nbsp;ORCID: <a href='https://orcid.org/0000-0002-1389-247X'>0000-0002-1389-247X</a>&nbsp;)</i></p>
+<p class="note"><i>Comentarios y Sugerencias: <a href='https://aphysica.github.io/torassa/abs/200'>Contacto</a> (&nbsp;¡Gracias!&nbsp;)</i></p>
+<p class="note"><i>(&nbsp;v1.0.4 b&nbsp;) : <a href='https://doi.org/rwb5'>https://doi.org/rwb5</a> (&nbsp;<a class="note" href="https://creativecommons.org/licenses/by/4.0/">cc-by-4.0</a>&nbsp;)</i></p>
+
+</header>
+
+<section aria-labelledby="intro">
+
+<h2 id="intro">Introducción</h2>
+
+<p>La mecánica clásica se divide según su formalismo matemático en: mecánica newtoniana (también llamada mecánica vectorial), mecánica d'alembertiana (también llamada mecánica relacional), mecánica lagrangiana y mecánica hamiltoniana (todos estos modelos son observacionalmente equivalentes entre sí). Este artículo presenta un análisis lógico, epistemológico y ontológico de la mecánica newtoniana en particular y de la física teórica en general (principalmente, este artículo presenta un análisis lógico, epistemológico y ontológico de la dinámica newtoniana de la partícula para sistemas de referencia inerciales y no inerciales).</p>
+
+</section>
+
+<nav aria-labelledby="index">
+
+<h2 id="index">Índice</h2>
+
+<p class="strong">PARTE I</p>
+
+<p><a href="#T01">1. Primera Ley de Newton</a></p>
+
+<p><a href="#T02">2. Segunda Ley de Newton</a></p>
+
+<p><a href="#T03">3. Tercera Ley de Newton</a></p>
+
+<p><a href="#T04">4. Fuerzas de la Naturaleza</a></p>
+
+<p class="strong">PARTE II</p>
+
+<p><a href="#T05">1. Ecuación de Movimiento</a></p>
+
+<p><a href="#T06">2. Problema Teórico</a></p>
+
+<p><a href="#T07">3. Solución Teórica 1</a></p>
+
+<p><a href="#T08">4. Solución Teórica 2</a></p>
+
+<p class="strong">PARTE III</p>
+
+<p><a href="#T09">1. Momento Lineal</a></p>
+
+<p><a href="#T10">2. Momento Angular</a></p>
+
+<p><a href="#T11">3. Trabajo y Energía</a></p>
+
+<p><a href="#T12">4. Leyes de Conservación</a></p>
+
+<p class="strong">PARTE IV</p>
+
+<p><a href="#O0">1. Observaciones Generales</a></p>
+
+<p><a href="#B0">2. Referencias y Bibliografía</a></p>
+
+<p><a href="#N0">3. Notas y Aclaraciones</a></p>
+
+<p><a href="#AN">4. Anexos y</a>&nbsp;<a href="#AP">Apéndices</a></p>
+
+</nav>
+
+<section aria-labelledby="part-1">
+
+<h2 id="part-1" class="part">PARTE I</h2>
+
+<section aria-labelledby="T01">
+
+<h2 id="T01">Primera Ley de Newton</h2>
+
+<p class="strong"><i>Toda partícula permanece en su estado de reposo o de movimiento rectilíneo uniforme si sobre la partícula no actúa fuerza alguna.</i></p>
+
+<p>Siempre consideré a esta ley como redundante e innecesaria porque siempre consideré que la primera ley de Newton se deducía de la segunda ley de Newton.&nbsp;<a href="#N111">[N111]</a></p>
+
+<p>Sin embargo, luego de leer un artículo del físico argentino Hugo Alberto Fernández <a href="#R02">[R02]</a> reflexioné sobre sus comentarios respecto a la primera ley de Newton y llegué a la conclusión de que la primera ley de Newton no era redundante ni innecesaria (más allá incluso de su gran importancia histórica).</p>
+
+<p>La segunda ley de Newton es una proposición lógica del tipo: "Si pasa A entonces pasa B" (también llamada proposición condicional) <a href="#R03">[R03]</a>. Donde A es que actúe una fuerza neta sobre una partícula (esté esta fuerza neta equilibrada o no) y B es la aceleración de la partícula. Por lo tanto, la segunda ley de Newton solamente establece qué sucede con el estado de movimiento de una partícula cuando sobre la partícula actúan fuerzas (estén estas fuerzas equilibradas o no), pero la segunda ley de Newton no establece qué tipo de movimiento debe tener una partícula cualquiera cuando sobre ella no actúa fuerza alguna. Por lo tanto, siguiendo otra vez la lógica: "Si no pasa A entonces puede ser que pase B o que no pase B". Es decir, según la segunda ley de Newton y la lógica, si sobre una partícula cualquiera no actúa fuerza alguna entonces la partícula puede estar en un estado de reposo, de movimiento rectilíneo uniforme o de aceleración. Y lo mejor de todo es que, sea cual sea el estado en que se encuentre la partícula (en ausencia total de fuerzas sobre ella), ninguno de estos tres estados refutaría la segunda ley de Newton <a href="#R04">[R04]</a> porque la segunda ley de Newton trata solamente cuando sobre cualquier partícula actúan fuerzas (estén estas fuerzas equilibradas o no) y no cuando sobre la partícula no actúa fuerza alguna.</p>
+
+<p>Y es justamente aquí donde la primera ley de Newton viene al rescate, dejando de ser una ley redundante e innecesaria, puesto que la primera ley de Newton sí establece qué sucede con una partícula cualquiera cuando sobre ella no actúa fuerza alguna.</p>
+
+<p>Sin embargo, el asunto con la primera ley de Newton no ha terminado aún, porque en nuestro Universo no existe ni una sola partícula sobre la cual no actúe fuerza alguna; sobre una partícula siempre actúan fuerzas (gravitatorias, eléctricas, etc.) por más pequeñas que sean, lo que hace imposible hallar experimentalmente una partícula sobre la cual no actúe fuerza alguna. Por más que muchos físicos, incluso el mismo Einstein <a href="#R06">[R06]</a>, utilicen la primera ley de Newton principalmente para poder definir experimentalmente a un sistema de referencia inercial, afirmando que si una partícula es alejada infinitamente de las demás partículas entonces sobre esta partícula no actuará fuerza alguna y, por lo tanto, todo sistema de referencia en el cual esta partícula esté en reposo o en movimiento rectilíneo uniforme será un sistema de referencia inercial. Sin embargo, la verdad es otra: según la ley de gravitación universal de Newton, por más que se aleje mucho una partícula de las demás partículas, actuarán sobre esta partícula fuerzas gravitatorias, por más que sean necesarias observarlas con un microscopio electrónico (es un decir), siempre actuarán sobre la partícula fuerzas gravitatorias. Pero se está aclarando que la partícula es alejada infinitamente de las demás partículas; de acuerdo, pero para poder determinar su estado de movimiento el observador necesita de reglas y relojes, como bien lo ha aclarado Einstein <a href="#R07">[R07]</a>. Por lo tanto, esas reglas y esos relojes que determinarán experimentalmente el estado de movimiento de la partícula de prueba ejercerán también fuerzas gravitatorias sobre la partícula de prueba (por más pequeñas que sean) y eso también hará imposible poder afirmar que experimentalmente sobre la partícula de prueba no actúa fuerza alguna.</p>
+
+<p>Por lo tanto, la primera ley de Newton tal como fue enunciada en este artículo solamente puede ser corroborada o refutada en un Universo donde es posible encontrar partículas en las cuales no actúe fuerza alguna sobre ellas. Consecuentemente, la primera ley de Newton enunciada arriba debe ser reformulada para que pueda ser corroborada o refutada en un Universo (el nuestro) donde no es posible encontrar partículas en las cuales no actúe fuerza alguna sobre ellas. Para no alargar y complicar aún más este problema, se enunciará a continuación la primera ley de Newton para que pueda ser corroborada o refutada en ambos tipos de Universo.</p>
+
+<p class="strong"><i>Toda partícula permanece en su estado de reposo o de movimiento rectilíneo uniforme si sobre la partícula no actúa fuerza alguna o si las fuerzas que actúan sobre la partícula están equilibradas.</i></p>
+
+<p>Pero volvemos al tema inicial del artículo, porque tal como está enunciada ahora la primera ley de Newton entonces se puede afirmar que en nuestro Universo la primera ley de Newton se deduce de la segunda ley de Newton, puesto que si las fuerzas que actúan sobre una partícula están equilibradas entonces la fuerza neta es igual a cero y, por lo tanto, la aceleración de la partícula es también igual a cero, lo que significa que la partícula está en un estado de reposo o de movimiento rectilíneo uniforme.</p>
+
+<p>Esto que parece ser una falla de la dinámica newtoniana puede ser algo bueno, porque ahora es posible unificar la primera ley de Newton con la segunda ley de Newton (es decir, incluir la primera ley de Newton en la segunda ley de Newton). Luego, para que la segunda ley de Newton pueda ser corroborada o refutada en un tipo de Universo en el cual es posible encontrar partículas sobre las cuales no actúe fuerza alguna, solamente habría que hacer la siguiente aclaración: en la segunda ley de Newton, si sobre una partícula no actúa fuerza alguna entonces esto debe ser interpretado como si una fuerza neta igual a cero actuara sobre la partícula.</p>
+
+</section>
+
+<section aria-labelledby="T02">
+
+<h2 id="T02">Segunda Ley de Newton</h2>
+
+<p class="strong"><i>Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</i></p>
+
+<p>En primer lugar, se hace la aclaración de que si sobre la partícula $i$ no actúa fuerza alguna entonces esto debe ser interpretado como si una fuerza neta igual a cero ${\mathbf{F}}_i$ actuara sobre la partícula $i$ (tal como se ha propuesto en la sección anterior y quedando, por lo tanto, la primera ley de Newton incluida desde un punto de vista lógico en la segunda ley de Newton).</p>
+
+<p>En segundo lugar, se hace también la aclaración de que la fuerza neta de las fuerzas reales ${\mathbf{F}}_i$ está en negrita y que la aceleración ordinaria ${\vec{a}}_{\hspace{+0.045em}i}$ no está en negrita (sino con flecha vector) porque en la dinámica newtoniana toda fuerza real es invariante bajo transformaciones entre sistemas de referencia inerciales y no inerciales, en cambio toda aceleración ordinaria no es invariante bajo transformaciones entre sistemas de referencia inerciales y no inerciales (esto se explicará más detalladamente en una sección posterior).</p>
+
+<p>En tercer lugar, la teoría establece por definición que la masa inercial de una partícula es un escalar que actúa como una constante característica de la misma. Es fundamental aclarar que esta constancia se postula como una definición estructural del modelo y no como un principio derivado de la experiencia; la teoría misma no predice ni calcula qué valor numérico debe tener dicha masa, por lo que su cuantificación queda enteramente a cargo de la investigación experimental.&nbsp;<a href="#N121">[N121]</a></p>
+
+<p>A partir de allí, es la experiencia la que nos aporta los hechos fundamentales sobre este parámetro:</p>
+
+<ul>
+
+<li class="liver">Muestra que la masa inercial es siempre estrictamente positiva (la existencia de masas negativas no refutaría lógicamente la segunda ley, pero una masa igual a cero introduciría una singularidad insalvable en la interpretación operativa de la ecuación).</li>
+
+<li class="liver">Confirma que el valor de la masa inercial depende de cada partícula en particular (aunque lógicamente la teoría admitiría que todas las partículas posean idéntico valor sin dejar por ello de ser consistente).</li>
+
+<li class="liver">Constata que la masa inercial es una magnitud aditiva; es decir, que la masa inercial de un sistema compuesto por varias partículas equivale a la suma aritmética de las masas inerciales individuales de cada una de sus partes constituyentes (cabe destacar que esta propiedad de aditividad estricta es exclusiva de la mecánica clásica, ya que en marcos teóricos avanzados como la teoría de la relatividad especial deja de cumplirse rigurosamente).</li>
+
+<li>Constata también que la masa inercial es una magnitud invariante bajo transformaciones entre sistemas de referencia, tanto inerciales como no inerciales.</li>
+
+</ul>
+
+<p>Si no fijáramos la masa inercial como constante por definición teórica, ante cualquier anomalía en la aceleración podríamos inventar que "la masa inercial cambió en ese instante" para salvar la ecuación $( \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$. Al definir la masa inercial como una propiedad constante e intrínseca de la partícula, la ecuación queda expuesta a la contrastación empírica real <a href="#R04">[R04]</a>.</p>
+
+<p>En cuarto lugar, es imperativo señalar una tensión lógica recurrente en la formulación tradicional de la mecánica: las leyes de Newton invocan permanentemente el concepto de fuerza, pero la teoría clásica no ofrece una definición formal e independiente para la magnitud fuerza (siendo el recurso al dinamómetro una mera herramienta de medición operativa y ya metodológicamente insuficiente para una fundamentación conceptual).</p>
+
+<p>Ante este vacío, es habitual que diversos textos definan a la segunda ley de Newton directamente como la ecuación que define a la fuerza. Sin embargo, desde un punto de vista epistemológico y de lógica formal, esto es insostenible: una proposición no puede ser simultáneamente una definición tautológica y una ley empírica refutable.</p>
+
+<p>Si la segunda ley de Newton se reduce a una definición operativa de fuerza, la ecuación pierde inmediatamente su carácter de principio físico contrastable con la experiencia. Para que la segunda ley de Newton conserve su estatus científico y empírico, la fuerza neta debe concebirse <i>a priori</i> como la resultante de interacciones reales (como la gravitatoria, la electrostática, etc.), quedando la segunda ley de Newton como el puente estrictamente empírico que vincula dichas interacciones reales con la aceleración observada.</p>
+
+<p>En síntesis, la fundamentación epistemológica de la segunda ley de Newton descansa sobre tres pilares conceptuales:</p>
+
+<ul>
+
+<li class="liver"><b>La Fuerza Neta $( \, {\mathbf{F}}_i \, )$:</b> Se concibe <i>a priori</i> como la resultante de interacciones reales (las cuales se detallarán en una sección posterior), evitando así convertir a la segunda ley de Newton en una mera definición tautológica.</li>
+
+<li class="liver"><b>La Masa Inercial $( \, m_i \, )$:</b> Se postula teóricamente como una magnitud escalar constante e intrínseca de la partícula. Esta elección otorga elegancia y rigidez conceptual al modelo, resultando indispensable para que la relación $( \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ mantenga su estatus de principio físico falsable y contrastable con la experiencia.</li>
+
+<li><b>La Estructura Causal $( \, {\mathbf{F}}_i \to m_i \to {\vec{a}}_{\hspace{+0.045em}i} \, )$:</b> La relación funcional no es una mera igualdad matemática simétrica, sino un modelo dinámico donde la <b>Fuerza</b> actúa como <i>causa</i>, la <b>Masa Inercial</b> como la <i>resistencia</i> intrínseca de la partícula a cambiar su estado de movimiento, y la <b>Aceleración</b> como el <i>efecto</i> observable resultante.</li>
+
+</ul>
+
+</section>
+
+<section aria-labelledby="T03">
+
+<h2 id="T03">Tercera Ley de Newton</h2>
+
+<p class="strong"><i>Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</i></p>
+
+<p>A diferencia de la segunda ley de Newton, la tercera ley no se formula en términos de la fuerza neta que actúa sobre una partícula, sino en términos de <b>fuerzas de interacción individuales y recíprocas</b> entre pares de partículas.</p>
+
+<p>Al analizar la estructura formal de esta ley, destacan cuatro aspectos epistemológicos centrales:</p>
+
+<ul>
+
+<li class="liver"><b>Identidad de la interacción:</b> A pesar de que la ley no lo establece de forma explícita, se entiende que el par de fuerzas de acción y reacción pertenece exactamente al mismo tipo de interacción física. Por ejemplo, si la partícula $i$ ejerce una fuerza gravitatoria sobre $j$, la reacción de $j$ sobre $i$ es también de origen gravitatorio y no de otro tipo.</li>
+
+<li class="liver"><b>Simetría débil:</b> En su enunciado general (<i>versión débil</i>), la ley únicamente satisface la igualdad vectorial opuesta $( \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, )$, lo cual es condición necesaria y suficiente para deducir el teorema de <b>conservación del momento lineal</b> del sistema aislado.</li>
+
+<li class="liver"><b>Simetría fuerte:</b> Sin embargo, para deducir la <b>conservación del momento angular</b>, se requiere que la ley se cumpla en su <i>versión fuerte</i>; es decir, que ambas fuerzas actúen además a lo largo de la misma línea recta que une geométricamente a ambas partículas $( \, \vec{r}_{j} \times {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, \vec{r}_{i} \times {\mathbf{F}_{i\hspace{-0.030em}j}} \, )$.</li>
+
+<li><b>Instantaneidad de la interacción:</b> La formulación clásica asume implícitamente que el efecto de la fuerza se propaga de manera instantánea a través del espacio (acción a distancia), de modo que el par de fuerzas recíprocas opera de forma simultánea sin retraso temporal.</li>
+
+</ul>
+
+<p>Por otra parte, cabe destacar que la tercera ley de Newton no constituye una ley sobre la cinemática de las partículas, sino que establece una <b>característica estructural inherente a las interacciones reales</b> en la mecánica clásica. Por lo tanto, del mismo modo que la primera ley fue absorbida lógicamente por la segunda, es de esperar que al formular de manera rigurosa las fuerzas de la naturaleza (que se abordarán en la próxima sección), la tercera ley deje de ser un axioma independiente y sea absorbida como una consecuencia derivada de la estructura misma de cada interacción.</p>
+
+<p>Finalmente, es fundamental comprender que la eventual invalidez o violación de la tercera ley de Newton no compromete en absoluto la validez de la segunda ley (ni, por extensión, de la primera). A pesar de la creencia tradicional que presenta a las tres leyes como un bloque monolítico e indisoluble, la dinámica de una partícula opera de manera plenamente consistente a través de $( \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$, aun cuando los principios de acción y reacción (en sus versiones débil y fuerte) dejen de cumplirse universalmente.&nbsp;<a href="#N131">[N131]</a></p>
+
+</section>
+
+<section aria-labelledby="T04">
+
+<h2 id="T04">Fuerzas de la Naturaleza</h2>
+
+<p>En el desarrollo didáctico habitual de la física suele calificarse a expresiones como la ley de gravitación universal de Newton o la ley de Coulomb como "leyes empíricas descubiertas experimentalmente". Sin embargo, bajo un análisis epistemológico riguroso, <b>dichas formulaciones no operan como leyes empíricas inductivas, sino como definiciones constitutivas del modelo físico</b>.</p>
+
+<p>En efecto, para que una expresión como $( \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} = -\,G \, \frac{m_i \, m_j}{r_{ij}^2} \, \hat{\mathbf{r}}_{ij} \, )$ pudiera corroborarse experimentalmente como una ley empírica independiente, sería necesario medir de manera autónoma ambos miembros de la igualdad: por un lado, los parámetros y variables del miembro derecho (&nbsp;masas gravitatorias, posiciones y la constante de gravitación&nbsp;) y, por otro, el valor de la fuerza individual de interacción $( \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} \, )$ del miembro izquierdo. Sin embargo, las fuerzas individuales de interacción —e incluso la propia fuerza neta— no son magnitudes directamente observables ni medibles al margen de la dinámica; por consiguiente, dicha expresión no constituye un enunciado empírico contrastable por sí solo, sino la <b>definición constitutiva</b> del término de fuerza gravitatoria $( \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} \,\doteq\, -\,G \, \frac{m_i \, m_j}{r_{ij}^2} \, \hat{\mathbf{r}}_{ij} \, )$.</p>
+
+<p>En consecuencia, para poder contrastar la dinámica con la realidad, la teoría requiere establecer un <b>conjunto cerrado y explícito de definiciones de interacción</b>, donde cada fuerza específica $( \, {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{\hspace{+0.045em}ij} \,\doteq\, \dots \, )$ que actúa sobre una partícula $i$ (&nbsp;ejercida por otra partícula $j$&nbsp;) queda definida mediante parámetros intrínsecos de las partículas (&nbsp;tales como masas gravitatorias o cargas eléctricas&nbsp;) y variables cinemáticas (&nbsp;tales como posiciones relativas&nbsp;).&nbsp;<a href="#N141">[N141]</a></p>
+
+<p>A partir de este conjunto de interacciones, se define formalmente la <b>fuerza neta</b> $( \, {\mathbf{F}}_{\hspace{+0.045em}i} \, )$ que actúa sobre una partícula $i$ como la suma vectorial de dichas interacciones:</p>
+
+<p class="math-block">${\mathbf{F}}_{\hspace{+0.045em}i} \,\doteq\, \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} + \dots + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{\hspace{+0.045em}ij}$</p>
+
+<p>El carácter <i>cerrado</i> de esta definición cumple una función epistemológica vital: impide que la teoría introduzca "fuerzas <i>ad hoc</i>" improvisadas para justificar desviaciones experimentales inesperadas, garantizando así que la segunda ley de Newton $( \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ opere como un verdadero principio empírico refutable. Si la aceleración observada $( \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ difiere de la predicha por el conjunto cerrado de interacciones, es el modelo entero el que queda expuesto a la refutación experimental.</p>
+
+<p>En síntesis, estas definiciones operan básicamente como un <b>puente conceptual</b>: conectan los parámetros métricos y geométricos de las interacciones con el producto	$( \, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$. De este modo, lo que la experiencia pone verdaderamente a prueba de manera global es la segunda ley de Newton en su versión desarrollada y aproximada (&nbsp;descartando los miles de millones de términos cuyas interacciones valen prácticamente cero&nbsp;).&nbsp;<a href="#N142">[N142]</a></p>
+
+<p>Del mismo modo, en lo que respecta a la interacción mutua, esta estructura revela por qué <b>la tercera ley de Newton no es un axioma independiente, sino una consecuencia deducible de cada definición de interacción</b>. Al formular explícitamente cada función de fuerza por pares $( \, {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{\hspace{+0.045em}ij} \, )$, es la propia estructura matemática de esa definición la que determina si la interacción satisface el principio de acción y reacción en su versión débil $( \, {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{j\hspace{+0.090em}i} \,=\, -\,{\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{i\hspace{-0.030em}j} \, )$, en su versión fuerte (&nbsp;si además apunta en la dirección de la recta que une ambas partículas&nbsp;), o si no lo satisface.</p>
+
+<p>Por último, esta concepción epistemológica esclarece cómo se comporta la teoría frente a la refutación empírica. Al sostener un conjunto cerrado de definiciones de interacción, cualquier discrepancia sistemática entre la aceleración predicha y la observada obliga a una bifurcación estricta: o bien se amplía formalmente el conjunto incorporando una nueva interacción constitutiva debidamente acoplada, o bien se reconoce que se han alcanzado los límites estructurales de validez del propio paradigma, cediendo el paso a marcos teóricos más profundos.</p>
+
+</section>
+
+</section>
+
+<section aria-labelledby="part-2">
+
+<h2 id="part-2" class="part">PARTE II</h2>
+
+<section aria-labelledby="T05">
+
+<h2 id="T05">Ecuación de Movimiento</h2>
+
+<p class="strong"><i>Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</i></p>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T06">
+
+<h2 id="T06">Problema Teórico</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T07">
+
+<h2 id="T07">Solución Teórica 1</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T08">
+
+<h2 id="T08">Solución Teórica 2</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+</section>
+
+<section aria-labelledby="part-3">
+
+<h2 id="part-3" class="part">PARTE III</h2>
+
+<section aria-labelledby="T09">
+
+<h2 id="T09">Momento Lineal</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T10">
+
+<h2 id="T10">Momento Angular</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T11">
+
+<h2 id="T11">Trabajo y Energía</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="T12">
+
+<h2 id="T12">Leyes de Conservación</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+</section>
+
+<section aria-labelledby="part-4">
+
+<h2 id="part-4" class="part">PARTE IV</h2>
+
+<section aria-labelledby="O0">
+
+<h2 id="O0">Observaciones Generales</h2>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+<section aria-labelledby="B0">
+
+<h2 id="B0">Referencias y Bibliografía</h2>
+
+<p id="R01">[R01] I. Newton, Principios Matemáticos de la Filosofía Natural, (1687).</p>
+
+<p id="R02">[R02] H. Fernández, Curso de Relatividad Especial, (2016).</p>
+
+<p id="R03">[R03] I. Copi, Introducción a la Lógica, (2011).</p>
+
+<p id="R04">[R04] K. Popper, La Lógica de la Investigación Científica, (1934).</p>
+
+<p id="R05">[R05] T. Kuhn, La Estructura de las Revoluciones Científicas, (1962).</p>
+
+<p id="R06">[R06] A. Einstein, Sobre la Teoría de la Relatividad Especial y General, (1916).</p>
+
+<p id="R07">[R07] A. Einstein, Sobre la Electrodinámica de los Cuerpos en Movimiento, (1905).</p>
+
+<p id="R08">[R08] E. Mach, La Ciencia de la Mecánica, (1883).</p>
+
+<p id="R09">[R09] H. Goldstein, Mecánica Clásica, (1950).</p>
+
+<p id="R10">[R10] A. French, Mecánica Newtoniana, (1971).</p>
+
+<p id="R11">[R11] J. Taylor, Mecánica Clásica, (2005).</p>
+
+<p id="R12">[R12] A. Assis, Mecánica Relacional (&nbsp;Mach-Weber&nbsp;), (1999).&nbsp;<a href='https://www.ifi.unicamp.br/~assis/Relational-Mechanics-Mach-Weber.pdf'>[&nbsp;PDF&nbsp;]</a>&nbsp;(&nbsp;6&nbsp;MB&nbsp;)</p>
+
+<p id="R13">[R13] A. Tobla, Magnitudes Lineales, Radiales &amp; Escalares, (2015).&nbsp;<a href='https://atorassa.github.io/physics-authors/tobla/spanish/pdf/01.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R14">[R14] A. Tobla, Sobre La Mecánica Relacional, (2024).&nbsp;<a href='https://atorassa.github.io/physics-authors/tobla/spanish/pdf/05.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R15">[R15] A. Tobla, Una Reformulación de la Mecánica Clásica (&nbsp;I&nbsp;&amp;&nbsp;II&nbsp;), (2024).&nbsp;<a href='https://atorassa.github.io/physics-authors/tobla/spanish/pdf/02.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R16">[R16] A. Tobla, Una Reformulación de la Mecánica Clásica (&nbsp;III&nbsp;&amp;&nbsp;IV&nbsp;), (2024).&nbsp;<a href='https://atorassa.github.io/physics-authors/tobla/spanish/pdf/03.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R17">[R17] A. Torassa, Sobre La Mecánica Clásica, (1996).&nbsp;<a href='https://atorassa.github.io/physics-authors/torassa/spanish/pdf/01.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R18">[R18] A. Torassa, Ecuación General de Movimiento, (2013).&nbsp;<a href='https://atorassa.github.io/physics-authors/torassa/spanish/pdf/22.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R19">[R19] A. Torassa, Una Reformulación de la Mecánica Clásica, (2014).&nbsp;<a href='https://atorassa.github.io/physics-authors/torassa/spanish/pdf/45.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R20">[R20] A. Torassa, Sobre Campos, Masa Gravitatoria y Masa Inercial, (2025).&nbsp;<a href='https://aphysica.github.io/torassa/pdf/204v1es.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R21">[R21] A. Torassa, Mecánica Clásica (&nbsp;Definiciones Generales&nbsp;), (2011).&nbsp;<a href='https://atorassa.github.io/physics-authors/torassa/spanish/pdf/18.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R22">[R22] A. Blato, Sobre el Principio de Mínima Acción, (2015).&nbsp;<a href='https://atorassa.github.io/physics-authors/blato/spanish/pdf/02.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R23">[R23] A. Kinetic, Magnitudes Escalares, (2025).&nbsp;<a href='https://akinetic.github.io/scalar-magnitudes/es/trabajo.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="R24">[R24] A. Kinetic, Magnitudes Relacionales, (2025).&nbsp;<a href='https://akinetic.github.io/relational-magnitudes/es/trabajo.pdf'>[&nbsp;PDF&nbsp;]</a></p>
+
+<p id="B01">[B01] J. Kepler, Nueva Astronomía, (1609).</p>
+
+<p id="B02">[B02] G. Galilei, Dos Nuevas Ciencias, (1638).</p>
+
+<p id="B03">[B03] J. D'Alembert, Tratado de Dinámica, (1743).</p>
+
+<p id="B04">[B04] J. Lagrange, Mecánica Analítica, (1788).</p>
+
+<p id="B05">[B05] W. Hamilton, Sobre un Método General en Dinámica, (1834).</p>
+
+<p id="B06">[B06] M. Ostrogradski, Teorema de Ostrogradski, (1850).</p>
+
+<p id="B07">[B07] R. Descartes, Discurso del Método, (1637).</p>
+
+<p id="B08">[B08] D. Hume, Tratado de la Naturaleza Humana, (1739).</p>
+
+<p id="B09">[B09] I. Kant, Crítica de la Razón Pura, (1781).</p>
+
+<p id="B10">[B10] G. Hegel, Fenomenología del Espíritu, (1807).</p>
+
+<p id="B11">[B11] L. Wittgenstein, Tratado Lógico-Filosófico, (1921).</p>
+
+<p id="B12">[B12] A. Carpio, Principios de Filosofía, (1974).</p>
+
+</section>
+
+<section aria-labelledby="N0">
+
+<h2 id="N0">Notas y Aclaraciones</h2>
+
+<p class="top" id="N111"><b>[N111]</b></p>
+
+<h3>Primera Ley de Newton</h3>
+
+<p>La primera ley de Newton (&nbsp;y sobre todo de Galileo Galilei, claro está&nbsp;) tiene una enorme importancia histórica puesto que establece, al contrario de lo que postulaba la filosofía de Aristóteles, que una partícula para continuar en su estado de movimiento rectilíneo uniforme no necesita de ningún agente externo. Por lo tanto, esta ley cambió totalmente la manera de concebir el Universo. Pero pasaron más de 300 años desde la publicación de Newton <a href="#R01">[R01]</a> y este artículo es un análisis contemporáneo. Además, la primera ley de Newton no se postuló tal como se postula en este artículo, puesto que este artículo no pretende ser una descripción histórica detallada de la mecánica clásica sino más bien un análisis teórico-filosófico de la mecánica clásica.</p>
+
+<p class="top" id="N121"><b>[N121]</b></p>
+
+<h3>Segunda Ley de Newton</h3>
+
+<p>Existe un enfoque epistemológico alternativo (&nbsp;asociado históricamente a planteos de tipo machiano <a href="#R08">[R08]</a>&nbsp;) en el que la masa inercial no se define <i>a priori</i> por la teoría, sino que se deduce empíricamente al constatar experimentalmente que el cociente entre la fuerza neta y la aceleración obtenida sobre una misma partícula resulta ser un valor constante $( \, \|{{\mathbf{F}}_i}\| \hspace{+0.060em} / \|{\vec{a}}_{\hspace{+0.045em}i}\| \,=\, k_{\hspace{+0.045em}i} \, )$, definiendo luego a esa constante experimental como la masa inercial $( \, m_i \doteq k_{\hspace{+0.045em}i} \, )$. Sin embargo, este trabajo no adopta ese camino porque la vía empírica tropieza con un obstáculo insalvable: en estados de reposo o de movimiento rectilíneo uniforme (MRU), la aceleración $( \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ es nula, lo que vuelve inaplicable el cociente operacional e impide definir la masa inercial en esos estados. Más grave aún, como la aceleración $( \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ no es una cantidad invariante bajo transformaciones entre sistemas de referencia, definir la masa inercial $( \, m_i \, )$ a partir de $( \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ convertiría a una propiedad supuestamente intrínseca de la materia en una magnitud dependiente del observador, destruyendo su estatus de constante escalar característica de la partícula. Según este trabajo, definir <i>a priori</i> la masa inercial como una constante escalar e intrínseca de la partícula (tal como son definidas la carga eléctrica y la masa gravitatoria) es la única vía para evitar este caos cinemático y preservar la consistencia lógica de la dinámica.</p>
+
+<p class="top" id="N131"><b>[N131]</b></p>
+
+<h3>Tercera Ley de Newton</h3>
+
+<p>Existe una tendencia habitual en los manuales de física clásica a presentar las tres leyes de Newton como un bloque monolítico e indisoluble, sugiriendo de forma implícita que la modificación o falsedad de la tercera ley acarrearía el derrumbe instantáneo de todo el edificio dinámico. Sin embargo, un análisis axiomático riguroso demuestra que esto es epistemológicamente falso.</p>
+
+<p>Si trazamos un paralelo con la historia de la geometría, la situación de la tercera ley guarda un asombroso parecido con el <b>quinto postulado de Euclides</b> (el postulado de las paralelas). Durante siglos, los geómetras intentaron demostrar que el postulado de las paralelas era un teorema inevitable derivado de los primeros cuatro postulados, creyendo que negarlo era lógicamente imposible. Solamente cuando la matemática se atrevió a prescindir de él y a modificarlo, surgieron las geometrías no euclidianas (como las de Riemann o Lobachevski), revelando que el espacio poseía una estructura geométrica mucho más rica y general de lo que se creía.</p>
+
+<p>De manera idéntica ocurre en la dinámica clásica:</p>
+
+<ul>
+
+<li class="liver"><b>La segunda ley no requiere de la tercera para su validez:</b> La ecuación fundamental de movimiento $( \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, )$ y la definición de masa inercial operan a nivel de la partícula individual en su relación con la fuerza neta. Es perfectamente concebible, desde el punto de vista lógico y formal, desarrollar una dinámica consistente donde las partículas cumplan estrictamente con la proporcionalidad entre fuerza neta y aceleración, <b>aun cuando el principio de acción y reacción $( \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, )$ no se cumpla de forma universal</b>.</li>
+
+<li class="liver"><b>Lo que se rompe no es la dinámica, sino el balance de fuerzas internas:</b> Si en un sistema de partículas la tercera ley deja de cumplirse (&nbsp;es decir, si ${\mathbf{F}_{j\hspace{+0.090em}i}} \neq - \, {\mathbf{F}_{i\hspace{-0.030em}j}}$&nbsp;), la consecuencia inmediata no es la invalidez de la segunda ley, sino que las fuerzas internas dejan de cancelarse mutuamente. Esto altera la <b>conservación del momento lineal puramente mecánico</b>, haciendo que el sistema varíe su movimiento global aun cuando se encuentre aislado de influencias externas visibles.</li>
+
+<li><b>Apertura hacia dinámicas alternativas y teoría de campos:</b> Reconocer esta independencia axiomática permite concebir y formalizar <i>dinámicas alternativas</i> donde la simetría de interacción se rompe sin comprometer el carácter determinista del movimiento <a href="#R16">[R16]</a>. Esto es precisamente lo que ocurre al estudiar interacciones más complejas —como el electromagnetismo prerrelativista o sistemas donde las fuerzas dependen de velocidades y retardos temporales—, donde la tercera ley en su formulación estricta de acción a distancia deja de cumplirse. El "remanente" de momento que parece no conservarse entre las partículas no invalida la mecánica newtoniana, sino que evidencia que el sistema está interactuando con una estructura física subyacente: el campo.</li>
+
+</ul>
+
+<p>Por lo tanto, la tercera ley de Newton no es un dogma fundacional de la dinámica ni un requisito lógico para la validez de la segunda ley, sino una <b>condición de simetría particular</b> —típica de las fuerzas centrales estáticas— que actúa como puente y bisagra histórica hacia la física de campos. Comprender esta libertad formal libera a la mecánica clásica de su rigidez dogmática y la devuelve a su verdadera categoría: un modelo representativo y deductivo de la naturaleza, flexible y abierto a generalizaciones.</p>
+
+<p class="top" id="N141"><b>[N141]</b></p>
+
+<h3>Fuerzas de la Naturaleza</h3>
+
+<p>A modo de hoja de ruta metodológica, consideremos un universo clásico regido exclusivamente por dos interacciones fundamentales: la gravitatoria y la electrostática.</p>
+
+<p><b>Modelo ejemplar de un conjunto cerrado: Gravitación y Electrostática.</b></p>
+
+<p><b>1. Interacción gravitatoria:</b> La fuerza gravitatoria $( \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} \, )$ ejercida sobre una partícula $i$ por otra partícula $j$ queda establecida mediante la siguiente definición constitutiva:</p>
+
+<p class="math-block">${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} \,\doteq\, -\,G \, \dfrac{m_i \, m_j}{\|\vec{r}_i - \vec{r}_j\|^3} \, (\vec{r}_i - \vec{r}_j)$</p>
+
+<p>donde $G$ se define <i>a priori</i> como una constante escalar positiva e intrínseca de la interacción (&nbsp;denominada históricamente <i>constante de gravitación universal</i>&nbsp;) cuyo valor numérico debe obtenerse experimentalmente $( \, G \approx 6.674 \times 10^{-11}\,\text{N}\cdot\text{m}^2/\text{kg}^2 \, )$; $m_i$ y $m_j$ representan las <b>masas gravitatorias</b> de las partículas, definidas <i>a priori</i> como parámetros escalares intrínsecos propios de cada partícula cuyo valor numérico debe obtenerse también experimentalmente; y $\vec{r}_i$, $\vec{r}_j$ son sus vectores de posición instantáneos respecto del origen del sistema de referencia $( \, \vec{r}_i \neq \vec{r}_j \, )$.</p>
+
+<p>La evidencia empírica muestra que la masa gravitatoria es siempre estrictamente positiva $( \, m \gt 0 \,)$ —dando lugar solamente a atracciones—, que es una magnitud aditiva (&nbsp;la masa gravitatoria de un sistema compuesto equivale a la suma aritmética de las masas gravitatorias individuales de sus partículas constituyentes&nbsp;) y que es universalmente proporcional a la masa inercial (&nbsp;principio de equivalencia débil, que permite igualar ambas escalas mediante una elección adecuada de $G$&nbsp;).</p>
+
+<p>Asimismo, al depender exclusivamente de escalares invariantes y dado que en la cinemática clásica las posiciones relativas $( \, \vec{r}_i - \vec{r}_j \, )$ son invariantes ante cualquier cambio de sistema de referencia, se deduce inmediatamente que el vector ${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij}$ conserva su invarianza plena en todo sistema de referencia.</p>
+
+<p>Por otro lado, al intercambiar los índices $i \leftrightarrow j$, la estructura algebraica de la definición arroja directamente ${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{j\hspace{+0.090em}i} = - \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{i\hspace{-0.030em}j}$ a lo largo de la recta que une ambas partículas, satisfaciendo así la tercera ley de Newton en su <b>versión fuerte</b> (&nbsp;y, por ende, en su versión débil&nbsp;).</p>
+
+<p>Finalmente, la fuerza gravitatoria neta $( \, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}i} \, )$ que actúa sobre la partícula $i$ queda definida por:</p>
+
+<p class="math-block">${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}i} \,\doteq\, \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} \,=\, -\,G \, \sum_{j \neq i} \dfrac{m_i \, m_j}{\|\vec{r}_i - \vec{r}_j\|^3} \, (\vec{r}_i - \vec{r}_j)$</p>
+
+<p>donde ${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}i}$ resulta de sumar las contribuciones de todas las demás partículas $j$ del sistema sobre la partícula $i$.</p>
+
+<p><b>2. Interacción electrostática:</b> La fuerza electrostática $( \, {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} \, )$ ejercida sobre una partícula $i$ por otra partícula $j$ queda establecida mediante la siguiente definición constitutiva:</p>
+
+<p class="math-block">${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} \,\doteq\, k_e \, \dfrac{q_i \, q_j}{\|\vec{r}_i - \vec{r}_j\|^3} \, (\vec{r}_i - \vec{r}_j)$</p>
+
+<p>donde $k_e$ se define <i>a priori</i> como una constante escalar positiva e intrínseca de la interacción (&nbsp;denominada históricamente <i>constante de Coulomb</i>&nbsp;) cuyo valor numérico debe obtenerse experimentalmente $( \, k_e \approx 8.987 \times 10^{9}\,\text{N}\cdot\text{m}^2/\text{C}^2 \, )$; $q_i$ y $q_j$ representan las <b>cargas eléctricas</b> de las partículas, definidas <i>a priori</i> como parámetros escalares intrínsecos propios de cada partícula cuyo valor numérico debe obtenerse también experimentalmente; y $\vec{r}_i$, $\vec{r}_j$ son sus vectores de posición instantáneos respecto del origen del sistema de referencia $( \, \vec{r}_i \neq \vec{r}_j \, )$.</p>
+
+<p>La evidencia empírica muestra que la carga eléctrica puede ser positiva, negativa o nula $( \, q \in \mathbb{R} \, )$, dando lugar tanto a repulsiones como a atracciones (&nbsp;o a ausencia de interacción electrostática cuando alguna de las cargas es neutra&nbsp;), y que es una magnitud aditiva (&nbsp;la carga eléctrica de un sistema compuesto equivale a la suma algebraica de las cargas individuales de sus partículas constituyentes&nbsp;).</p>
+
+<p>Asimismo, al depender exclusivamente de escalares invariantes y dado que en la cinemática clásica las posiciones relativas $( \, \vec{r}_i - \vec{r}_j \, )$ son invariantes ante cualquier cambio de sistema de referencia, se deduce inmediatamente que el vector ${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij}$ conserva su invarianza plena en todo sistema de referencia.</p>
+
+<p>Por otro lado, al intercambiar los índices $i \leftrightarrow j$, la estructura algebraica de la definición arroja directamente ${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{j\hspace{+0.090em}i} = - \, {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{i\hspace{-0.030em}j}$ a lo largo de la recta que une ambas partículas, satisfaciendo así la tercera ley de Newton en su <b>versión fuerte</b> (&nbsp;y, por ende, en su versión débil&nbsp;).</p>
+
+<p>Finalmente, la fuerza electrostática neta $( \, {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}i} \, )$ que actúa sobre la partícula $i$ queda definida por:</p>
+
+<p class="math-block">${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}i} \,\doteq\, \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} \,=\, k_e \, \sum_{j \neq i} \dfrac{q_i \, q_j}{\|\vec{r}_i - \vec{r}_j\|^3} \, (\vec{r}_i - \vec{r}_j)$</p>
+
+<p>donde ${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}i}$ resulta de sumar las contribuciones de todas las demás partículas $j$ del sistema sobre la partícula $i$.</p>
+
+<p><b>3. Cierre del conjunto y fuerza neta total:</b> Bajo este conjunto cerrado y explícito de dos definiciones constitutivas, la fuerza neta $( \, {\mathbf{F}}_{\hspace{+0.045em}i} \, )$ que actúa sobre cualquier partícula $i$ del modelo queda unívocamente determinada por:</p>
+
+<p>${\mathbf{F}}_{\hspace{+0.045em}i} \,\doteq\, {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}i} + {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}i}$</p>
+
+<p>De este modo, la ecuación dinámica $( \, {\mathbf{F}}_{\hspace{+0.045em}i} = m_i \, \vec{a}_{\hspace{+0.045em}i} \, )$ adquiere contenido empírico pleno y refutable sin margen para términos improvisados.</p>
+
+<p class="top" id="N142"><b>[N142]</b></p>
+
+<h3>Fuerzas de la Naturaleza</h3>
+
+<p>Desde una perspectiva puramente lógica y computacional, la formulación de la mecánica clásica puede entenderse como un proceso progresivo de <b>compresión y refactorización de código</b>. Lejos de restar mérito a la arquitectura newtoniana, esta lectura pone en evidencia la brillantez de su diseño: la creación de abstracciones capaces de sintetizar una cantidad inmensa de datos empíricos en una interfaz elegante y ejecutable.</p>
+
+<p>Para comprender por qué las expresiones particulares (&nbsp;como la atracción gravitatoria o la fuerza electrostática&nbsp;) son <b>definiciones de modelo</b> y no leyes fundamentales independientes del movimiento, basta con observar la evolución de la ecuación dinámica en tres niveles de abstracción:</p>
+
+<b>1. El código fuente crudo (Ecuación totalmente descomprimida)</b>
+<p>En el nivel más elemental e intrínseco, la realidad empírica de un sistema de $n$ partículas no conoce de agrupaciones abstractas. La ecuación de movimiento real para una partícula individual $i$ se presenta de forma totalmente "descomprimida", detallando cada una de las interacciones recíprocas individuales:</p>
+
+<p>${\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{i1} + {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{i2} + \dots + {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{in} \, +$<br><br>${\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{i1} + {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{i2} + \dots + {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{in} \, + \, \dots \, +$<br><br>${\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{i1} + {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{i2} + \dots + {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{in} \, = \, m_i \, {\vec{a}}_{\hspace{+0.045em}i}$</p>
+
+<p>Este es el "código fuente plano": conceptualmente exacto y puramente empírico, pero operacionalmente intratable. Si intentáramos calcular el movimiento del universo en este nivel, necesitaríamos invocar una línea de código explícita para cada par de partículas existente.</p>
+
+<b>2. Creación de funciones y modularización (Definiciones de las Fuerzas de la Naturaleza)</b>
+<p>Para evitar la redundancia masiva, la física teórica refactoriza el código agrupando comportamientos idénticos en <b>módulos o funciones reutilizables</b>. Aquí es donde nacen las llamadas "fuerzas de la naturaleza". Por ejemplo, la ley de gravitación universal no constituye un axioma de la dinámica en sí mismo, sino la definición del cuerpo de una función matemática que encapsula un tipo específico de interacción a distancia:</p>
+
+<p class="math-block">$\mathrm{function} \:\: {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij}\,(m_i, m_j, {\mathbf{r}}_{ij}) \,\doteq\, -\,G \, \dfrac{m_i \, m_j}{r_{ij}^2} \, \hat{\mathbf{r}}_{ij}$</p>
+
+<p>Al definir e invocar estos módulos (&nbsp;gravitatorios, electrostáticos, etc.&nbsp;), el código original se semi-comprime, reduciendo la sumatoria de interacciones individuales a un conjunto de fuerzas clasificadas por su origen físico:</p>
+
+<p class="math-block">$\sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} + \dots + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{\hspace{+0.045em}ij} \, = \, m_i \, {\vec{a}}_{\hspace{+0.045em}i}$</p>
+
+<b>3. Optimización y abstracción máxima (La Fuerza Neta)</b>
+<p>Finalmente, el marco newtoniano alcanza su nivel más alto de elegancia al encapsular todo el lado izquierdo de la ecuación en una única variable de interfaz: la <b>fuerza neta</b> $( \, \mathbf{F}_{i} \, )$.</p>
+
+<p class="math-block">$\mathbf{F}_{i} \,\doteq\, \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{G}}}}_{\hspace{+0.045em}ij} + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{E}}}}_{\hspace{+0.045em}ij} + \dots + \sum_{j \neq i} {\mathbf{F}{\scriptstyle{\mathrm{N}}}}_{\hspace{+0.045em}ij}$</p>
+
+<p>Consecuentemente, la ecuación de movimiento adquiere su forma célebre y sintética:</p>
+
+<p>${\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i}$</p>
+
+<p>Bajo este prisma epistemológico, resulta evidente que la segunda ley de Newton es el <b>kernel o motor de ejecución principal</b>, mientras que la fuerza de gravedad y el resto de las interacciones son <b>definiciones de entrada (&nbsp;inputs&nbsp;)</b> creadas por los físicos para alimentar dicho motor. Confundir una definición de fuerza con una ley fundamental de la dinámica equivale a confundir el cuerpo de una función auxiliar con el propio compilador.</p>
+
+</section>
+
+<section aria-labelledby="AN">
+
+<h2 id="AN">Anexos</h2>
+
+<h3 class="top">Anexo I</h3>
+
+<h3>Mecánica Newtoniana</h3>
+
+<p><b>Opción 0 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$&nbsp;] y formulada solamente para [&nbsp;Los Sistemas Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: Toda partícula permanece en su estado de reposo o de movimiento rectilíneo uniforme si sobre la partícula no actúa fuerza alguna.</p>
+
+<p>2da. Ley de Movimiento: Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>Newtoniano $\doteq {\mathbf{F}}_i$ (&nbsp;${\mathbf{F}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales pero ${\vec{a}}_{\hspace{+0.045em}i}$ es solamente invariante bajo transformaciones entre sistemas inerciales&nbsp;)</p>
+
+<p><b>Opción 0 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$&nbsp;] y formulada solamente para [&nbsp;Los Sistemas Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento considerando que si sobre una partícula no actúa fuerza alguna entonces la fuerza neta que actúa sobre la partícula es igual a cero y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>Newtoniano $\doteq {\mathbf{F}}_i$ (&nbsp;${\mathbf{F}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales pero ${\vec{a}}_{\hspace{+0.045em}i}$ es solamente invariante bajo transformaciones entre sistemas inerciales&nbsp;)</p>
+
+<p><b>Opción 1 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Fuerzas Ficticias ${\vec{Q}}$&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: Toda partícula permanece en su estado de reposo o de movimiento rectilíneo uniforme si sobre la partícula no actúa fuerza alguna.</p>
+
+<p>2da. Ley de Movimiento: Toda fuerza neta ${\vec{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\vec{F}}_i \doteq {\mathbf{F}}_i + {\vec{Q}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>Newtoniano $\doteq {\vec{F}}_i$ (&nbsp;${\vec{F}}_i$ no es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\vec{a}}_{\hspace{+0.045em}i}$ tampoco es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 1 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Fuerzas Ficticias ${\vec{Q}}$&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: Toda fuerza neta ${\vec{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración ${\vec{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\vec{F}}_i \doteq {\mathbf{F}}_i + {\vec{Q}}_i \,=\, m_i \, {\vec{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento considerando que si sobre una partícula no actúa fuerza alguna entonces la fuerza neta que actúa sobre la partícula es igual a cero y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>Newtoniano $\doteq {\vec{F}}_i$ (&nbsp;${\vec{F}}_i$ no es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\vec{a}}_{\hspace{+0.045em}i}$ tampoco es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Magnitudes Relacionales (&nbsp;${\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}}$&nbsp;)&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: Toda partícula permanece en su estado de reposo relacional o de movimiento rectilíneo uniforme relacional si sobre la partícula no actúa fuerza alguna.</p>
+
+<p>2da. Ley de Movimiento: Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración relacional ${\mathbf{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\mathbf{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>Newtoniano $\doteq {\mathbf{F}}_i$ (&nbsp;${\mathbf{F}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\mathbf{a}}_{\hspace{+0.045em}i}$ también es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Magnitudes Relacionales (&nbsp;${\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}}$&nbsp;)&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: Toda fuerza neta ${\mathbf{F}}_i$ que actúa sobre una partícula $i$ de masa inercial $m_i$ produce en la partícula $i$ una aceleración relacional ${\mathbf{a}}_{\hspace{+0.045em}i}$ de acuerdo a la siguiente ecuación: $[ \, {\mathbf{F}}_i \,=\, m_i \, {\mathbf{a}}_{\hspace{+0.045em}i} \, ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento considerando que si sobre una partícula no actúa fuerza alguna entonces la fuerza neta que actúa sobre la partícula es igual a cero y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>Newtoniano $\doteq {\mathbf{F}}_i$ (&nbsp;${\mathbf{F}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\mathbf{a}}_{\hspace{+0.045em}i}$ también es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<h3 class="top">Anexo II</h3>
+
+<h3>Mecánica D'Alembertiana</h3>
+
+<p><b>Opción 0 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + La Fuerza de Inercia Ordinaria (&nbsp;vis insita&nbsp;) ${-\, m\hspace{+0.060em}{\vec{a}}}$&nbsp;] y formulada solamente para [&nbsp;Los Sistemas Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: La fuerza es una magnitud vectorial que representa interacción entre dos o más partículas.</p>
+
+<p>2da. Ley de Movimiento: La fuerza total ${\vec{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\vec{T}}_i \,\doteq\, {\mathbf{F}}_i \;-\; m_i \, {\vec{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>D'Alembertiano $\doteq {\vec{T}}_i$ (&nbsp;${\vec{T}}_i$ y ${\vec{a}}_{\hspace{+0.045em}i}$ son solamente invariantes bajo transformaciones entre sistemas inerciales&nbsp;)</p>
+
+<p><b>Opción 0 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + La Fuerza de Inercia Ordinaria (&nbsp;vis insita&nbsp;) ${-\, m\hspace{+0.060em}{\vec{a}}}$&nbsp;] y formulada solamente para [&nbsp;Los Sistemas Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: La fuerza total ${\vec{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\vec{T}}_i \,\doteq\, {\mathbf{F}}_i \;-\; m_i \, {\vec{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento y Las Fuerzas de la Naturaleza y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>D'Alembertiano $\doteq {\vec{T}}_i$ (&nbsp;${\vec{T}}_i$ y ${\vec{a}}_{\hspace{+0.045em}i}$ son solamente invariantes bajo transformaciones entre sistemas inerciales&nbsp;)</p>
+
+<p><b>Opción 1 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Fuerzas Ficticias ${\vec{Q}}$ + La Fuerza de Inercia Ordinaria (&nbsp;vis insita&nbsp;) ${-\, m\hspace{+0.060em}{\vec{a}}}$&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: La fuerza es una magnitud vectorial que representa interacción entre dos o más partículas.</p>
+
+<p>2da. Ley de Movimiento: La fuerza total ${\mathbf{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\mathbf{T}}_i \,\doteq\, {\mathbf{F}}_i + {\vec{Q}}_i \;-\; m_i \, {\vec{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>D'Alembertiano $\doteq {\mathbf{T}}_i$ (&nbsp;${\mathbf{T}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales pero ${\vec{Q}}_i$ y ${\vec{a}}_{\hspace{+0.045em}i}$ no son invariantes bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 1 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + Las Fuerzas Ficticias ${\vec{Q}}$ + La Fuerza de Inercia Ordinaria (&nbsp;vis insita&nbsp;) ${-\, m\hspace{+0.060em}{\vec{a}}}$&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: La fuerza total ${\mathbf{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\mathbf{T}}_i \,\doteq\, {\mathbf{F}}_i + {\vec{Q}}_i \;-\; m_i \, {\vec{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento y Las Fuerzas de la Naturaleza y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>D'Alembertiano $\doteq {\mathbf{T}}_i$ (&nbsp;${\mathbf{T}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales pero ${\vec{Q}}_i$ y ${\vec{a}}_{\hspace{+0.045em}i}$ no son invariantes bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 A:</b> Integrada por [&nbsp;Las 3 Leyes de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + La Fuerza de Inercia Relacional (&nbsp;vis insita relationalis&nbsp;) ${-\, m\hspace{+0.060em}{\mathbf{a}}}$ + Las Magnitudes Relacionales (&nbsp;${\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}}$&nbsp;)&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>1ra. Ley de Movimiento: La fuerza es una magnitud vectorial que representa interacción entre dos o más partículas.</p>
+
+<p>2da. Ley de Movimiento: La fuerza total ${\mathbf{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\mathbf{T}}_i \,\doteq\, {\mathbf{F}}_i \;-\; m_i \, {\mathbf{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>3ra. Ley de Movimiento: Si una partícula $i$ ejerce una fuerza ${\mathbf{F}_{j\hspace{+0.090em}i}}$ sobre otra partícula $j$ entonces la partícula $j$ ejerce una fuerza $-{\mathbf{F}_{i\hspace{-0.030em}j}}$ igual y de sentido contrario sobre la partícula $i$. $[ \, {\mathbf{F}_{j\hspace{+0.090em}i}} = - \, {\mathbf{F}_{i\hspace{-0.030em}j}} \, ]$</p>
+
+<p>D'Alembertiano $\doteq {\mathbf{T}}_i$ (&nbsp;${\mathbf{T}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\mathbf{a}}_{\hspace{+0.045em}i}$ también es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 B:</b> Integrada por [&nbsp;La Ecuación de Movimiento + Las Fuerzas de la Naturaleza ${\mathbf{F}}$ + La Fuerza de Inercia Relacional (&nbsp;vis insita relationalis&nbsp;) ${-\, m\hspace{+0.060em}{\mathbf{a}}}$ + Las Magnitudes Relacionales (&nbsp;${\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}}$&nbsp;)&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>La Ecuación de Movimiento: La fuerza total ${\mathbf{T}}_i$ que actúa sobre una partícula $i$ siempre es cero. $[ \; {\mathbf{T}}_i \,\doteq\, {\mathbf{F}}_i \;-\; m_i \, {\mathbf{a}}_{\hspace{+0.045em}i} \,=\, 0 \; ]$</p>
+
+<p>La Ecuación de Movimiento es la 2da. Ley de Movimiento, la 1ra. Ley de Movimiento se deduce de La Ecuación de Movimiento y Las Fuerzas de la Naturaleza y la 3ra. Ley de Movimiento se deduce de Las Fuerzas de la Naturaleza.</p>
+
+<p>D'Alembertiano $\doteq {\mathbf{T}}_i$ (&nbsp;${\mathbf{T}}_i$ es invariante bajo transformaciones entre sistemas inerciales y no inerciales y ${\mathbf{a}}_{\hspace{+0.045em}i}$ también es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<h3 class="top">Anexo III</h3>
+
+<h3>Mecánica Lagrangiana</h3>
+
+<p><b>Opción 1 B:</b> Integrada por [&nbsp;Las Ecuaciones de Movimiento + Las Magnitudes Energéticas Ordinarias&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>Lagrangiano $\doteq {\mathit{L}}_{\hspace{+0.045em}i}$ (&nbsp;${\mathit{L}}_{\hspace{+0.045em}i}$ expresado con las magnitudes ordinarias (&nbsp;${\vec{r}_{\hspace{+0.045em}i}} \,, {\vec{v}_{\hspace{+0.045em}i}}$&nbsp;) no es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 B:</b> Integrada por [&nbsp;Las Ecuaciones de Movimiento + Las Magnitudes Energéticas Relacionales&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>Lagrangiano $\doteq {\mathcal{L}}_{\hspace{+0.045em}i}$ (&nbsp;${\mathcal{L}}_{\hspace{+0.045em}i}$ expresado con las magnitudes relacionales (&nbsp;${\mathbf{r}_{\hspace{+0.045em}i}} \,, {\mathbf{v}_{\hspace{+0.045em}i}}$&nbsp;) sí es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p>En desarrollo&nbsp;...<br></p>
+
+<h3 class="top">Anexo IV</h3>
+
+<h3>Mecánica Hamiltoniana</h3>
+
+<p><b>Opción 1 B:</b> Integrada por [&nbsp;Las Ecuaciones de Movimiento + Las Magnitudes Energéticas Ordinarias&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>Hamiltoniano $\doteq {\mathit{H}}_{\hspace{+0.045em}i}$ (&nbsp;${\mathit{H}}_{\hspace{+0.045em}i}$ expresado con las magnitudes ordinarias (&nbsp;${\vec{r}_{\hspace{+0.045em}i}} \,, {\vec{v}_{\hspace{+0.045em}i}}$&nbsp;) no es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p><b>Opción 2 B:</b> Integrada por [&nbsp;Las Ecuaciones de Movimiento + Las Magnitudes Energéticas Relacionales&nbsp;] y formulada para [&nbsp;Los Sistemas Inerciales y No Inerciales&nbsp;]</p>
+
+<p>Hamiltoniano $\doteq {\mathcal{H}}_{\hspace{+0.045em}i}$ (&nbsp;${\mathcal{H}}_{\hspace{+0.045em}i}$ expresado con las magnitudes relacionales (&nbsp;${\mathbf{r}_{\hspace{+0.045em}i}} \,, {\mathbf{v}_{\hspace{+0.045em}i}}$&nbsp;) sí es invariante bajo transformaciones entre sistemas inerciales y no inerciales&nbsp;)</p>
+
+<p>En desarrollo&nbsp;...<br></p>
+
+<h3 class="top">Observaciones Generales</h3>
+
+<ul>
+	
+<li class="livex">La Mecánica Newtoniana, la Mecánica D'Alembertiana, la Mecánica Lagrangiana y la Mecánica Hamiltoniana son observacionalmente equivalentes entre sí.</li>
+
+<li class="livex">La Mecánica D'Alembertiana presentada en el Anexo II es aún una formulación incompleta (&nbsp;ver Apéndice II&nbsp;) <a href="#AP02">[&nbsp;AP02&nbsp;]</a>&nbsp;.</li>
+
+<li class="livex">Las Opciones con la letra A son formulaciones bajo el formato de 3 Leyes de Movimiento.</li>
+
+<li class="livex">Las Opciones con la letra B son formulaciones bajo el formato de Ecuaciones de Movimiento.</li>
+
+<li class="livex">Las Opciones con el número 0 son formulaciones expresadas solamente para los sistemas inerciales.</li>
+
+<li class="livex">Las Opciones con el número 1 son formulaciones expresadas para los sistemas inerciales y no inerciales incluyendo términos matemáticos (&nbsp;tales como: las fuerzas ficticias, la fuerza de inercia ordinaria, etc.&nbsp;) que no son en general invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</li>
+
+<li class="livex">Las Opciones con el número 2 son formulaciones expresadas para los sistemas inerciales y no inerciales incluyendo magnitudes relacionales (&nbsp;tales como: ${\mathbf{r}} , {\mathbf{v}} ,$ etc.&nbsp;) que siempre son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</li>
+
+<li class="livex">Las magnitudes vectoriales expresadas con flecha vector (&nbsp;tales como: ${\vec{F}} , {\vec{Q}} \hspace{+0.060em}, {\vec{T}} , {\vec{r}} , {\vec{v}} , {\vec{a}} ,$ etc.&nbsp;) no son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</li>
+
+<li>Las magnitudes vectoriales expresadas en negrita (&nbsp;tales como: ${\mathbf{F}} , {\mathbf{T}} , {\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}} ,$ etc.&nbsp;) son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</li>
+
+</ul>
+
+</section>
+
+<section aria-labelledby="AP">
+
+<h2 id="AP">Apéndices</h2>
+
+<h3 class="top">Apéndice I</h3>
+
+<h3>Magnitudes Cinemáticas</h3>
+
+<p><b>1. Las Magnitudes Radiales:</b> Las magnitudes radiales (&nbsp;${r} , {\dot{r}} , {\ddot{r}}$&nbsp;) son magnitudes escalares y son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</p>
+
+<ul>
+
+<li class="livex">A. Assis &nbsp;<a href="#R12">[R12]</a> &nbsp;(&nbsp;págs. 493–498&nbsp;)</li>
+
+<li class="livex">En el libro anterior las magnitudes radiales son denominadas magnitudes relacionales.</li>
+
+<li>Fue el físico brasileño André Koch Torres Assis quien utilizó primero el término "relacional". Sin embargo, en este trabajo, para no crear confusión con otras magnitudes relacionales (vectoriales) las denominaremos magnitudes radiales [&nbsp;que, de hecho, son magnitudes radiales (relativas)&nbsp;]</li>
+
+</ul>
+
+<p><b>2. Las Magnitudes Escalares:</b> Las magnitudes escalares (&nbsp;${\tau} , {\dot{\tau}} , {\ddot{\tau}}$&nbsp;) son magnitudes escalares y son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</p>
+
+<ul>
+
+<li class="livex">A. Kinetic &nbsp;<a href="#R23">[R23]</a></li>
+
+<li class="livex">A. Tobla &nbsp;<a href="#R15">[R15]</a></li>
+
+<li>Las magnitudes escalares están relacionadas con el teorema del virial, con nuevos tipos de energía, con los lagrangianos generalizados que dependen de derivadas superiores como la aceleración (&nbsp;según el formalismo de Mijaíl Ostrogradski&nbsp;) etc.</li>
+
+</ul>
+
+<p><b>3. Las Magnitudes Relacionales:</b> Las magnitudes relacionales (&nbsp;${\mathbf{r}} , {\mathbf{v}} , {\mathbf{a}}$&nbsp;) son magnitudes vectoriales y son invariantes bajo transformaciones entre sistemas inerciales y no inerciales.</p>
+
+<ul>
+	
+<li class="livex">A. Kinetic &nbsp;<a href="#R24">[R24]</a></li>
+
+<li class="livex">A. Tobla &nbsp;<a href="#R15">[R15]</a></li>
+
+<li>En el trabajo anterior las magnitudes relacionales son denominadas magnitudes universales puesto que el sistema auxiliar es el sistema de referencia fijo al Universo (&nbsp;considerando además a este sistema universal como un sistema inercial&nbsp;)</li>
+
+</ul>
+
+<h3 class="top" id="AP02">Apéndice II</h3>
+
+<h3>Mecánica D'Alembertiana</h3>
+
+<p>La formulación de la Mecánica D'Alembertiana presentada en el Anexo II se considera <i>incompleta</i> desde una perspectiva ontológica. Esto se debe a que las fuerzas ficticias ${\vec{Q}}$, la fuerza de inercia ordinaria ${-\, m\hspace{+0.060em}{\vec{a}}}$ y la fuerza de inercia relacional ${-\, m\hspace{+0.060em}{\mathbf{a}}}$ son introducidas formalmente como artificios matemáticos cinemáticos y no como el resultado de una interacción física real y conocida de la naturaleza.</p>
+
+<p>Una formulación d'alembertiana completa aspira a deducir [&nbsp;las fuerzas ficticias ${\vec{Q}}$ y la fuerza de inercia ordinaria ${-\, m\hspace{+0.060em}{\vec{a}}}$&nbsp;] y/o [&nbsp;la fuerza de inercia relacional ${-\, m\hspace{+0.060em}{\mathbf{a}}}$&nbsp;] a partir de las propiedades de un campo o una fuerza real.</p>
+
+<p>En la literatura científica contemporánea, hay varias vías de desarrollo hacia este objetivo, entre ellas:</p>
+
+<p><b>1. Mecánica Relacional de Weber-Assis:</b> Propuesta que deduce las fuerzas ficticias y la fuerza de inercia ordinaria a partir de una fuerza gravitatoria de tipo weberiana debida a la interacción de las masas gravitatorias del Universo, aunque con desviaciones respecto a la equivalencia observacional newtoniana clásica.</p>
+
+<ul>
+
+<li>A. Assis &nbsp;<a href="#R12">[R12]</a></li>
+
+</ul>
+
+<p><b>2. Fuerza Cinética (Torassa):</b> Formulación donde el término ${-\, m\hspace{+0.060em}{\mathbf{a}}}$ (&nbsp;la fuerza de inercia relacional&nbsp;) emerge directamente como la fuerza neta de una interacción real constitutiva, devolviendo el carácter dinámico y relacional al sistema sin perder equivalencia observacional.</p>
+
+<ul>
+
+<li class="livex">A. Tobla &nbsp;<a href="#R14">[R14]</a></li>
+
+<li class="livex">A. Tobla &nbsp;<a href="#R15">[R15]</a> &nbsp;(&nbsp;ver Trabajo II y Apéndices&nbsp;)</li>
+
+<li class="livex">A. Tobla &nbsp;<a href="#R16">[R16]</a> &nbsp;(&nbsp;ver Trabajo IV y Apéndices&nbsp;)</li>
+
+<li>A. Torassa &nbsp;<a href="#R17">[R17]</a> &nbsp;(&nbsp;ver Trabajo Original 1996&nbsp;)</li>
+
+</ul>
+
+<p><b>3. Mecanismo de Campo Escalar Gravitatorio (Torassa):</b> Enfoque cosmológico donde la aceleración de la masa gravitatoria interactúa con un campo escalar de fondo no nulo (&nbsp;sustentado por la naturaleza estrictamente positiva de la masa gravitatoria en el Universo&nbsp;). Este campo actúa de manera análoga a un campo de Higgs clásico, provocando que la aceleración aparezca en la ecuación de movimiento de forma idéntica a como la velocidad de una carga aparece en la fuerza de Lorentz.</p>
+
+<ul>
+
+<li>A. Torassa &nbsp;<a href="#R20">[R20]</a></li>
+
+</ul>
+
+<h3 class="top">Apéndice III</h3>
+
+<h3>Mecánica Lagrangiana</h3>
+
+<p>¿&nbsp;El principio de mínima acción es realmente una "maravilla empírica" o es simplemente una "maravilla matemática"&nbsp;?</p>
+
+<ul>
+
+<li class="livex">A. Blato &nbsp;<a href="#R22">[R22]</a></li>
+
+<li>A. Torassa &nbsp;<a href="#R21">[R21]</a></li>
+
+</ul>
+
+<p>En desarrollo&nbsp;...<br></p>
+
+<h3 class="top">Apéndice IV</h3>
+
+<h3>Mecánica Hamiltoniana</h3>
+
+<p>En desarrollo&nbsp;...</p>
+
+</section>
+
+</section>
+
+</article>
+
+</main>
+
+<footer>
+	<p><a href='https://github.com/aphysica'>&#160;github.com&#160;</a></p>
+</footer>
+
+<script>
+	const btnTheme = document.getElementById("btnTheme");
+	const btnFont = document.getElementById("btnFont");
+	const btnZoomOut = document.getElementById("btnZoomOut");
+	const btnZoomIn = document.getElementById("btnZoomIn");
+	const btnAlign = document.getElementById("btnAlign");
+	const btnReset = document.getElementById("btnReset");
+
+	const storage = {
+		set(key, val) {
+			try { localStorage.setItem(key, val); } catch (e) {}
+		},
+		clear() {
+			try {
+				["theme", "font", "align", "zoom"].forEach((k) => localStorage.removeItem(k));
+			} catch (e) {}
+		}
+	};
+
+	function updateLabels() {
+		btnTheme.textContent = document.body.classList.contains("dark-mode") ? "Claro" : "Oscuro";
+		btnFont.textContent = document.body.classList.contains("sans-serif") ? "Serif" : "Sans-serif";
+		btnAlign.innerHTML = document.body.classList.contains("align-left")
+			? '<svg width="1.15em" height="1.15em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>'
+			: '<svg width="1.15em" height="1.15em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h12M3 18h15"/></svg>';
+	}
+
+	function changeSize(delta) {
+		const root = document.documentElement;
+		const current = parseFloat(getComputedStyle(root).fontSize) || 16;
+		const next = Math.min(32, Math.max(8, current + delta));
+		root.style.fontSize = `${next}px`;
+		storage.set("zoom", next);
+	}
+
+	btnTheme.addEventListener("click", () => {
+		const isDark = document.body.classList.toggle("dark-mode");
+		storage.set("theme", isDark ? "dark" : "light");
+		updateLabels();
+	});
+
+	btnFont.addEventListener("click", () => {
+		const isSans = document.body.classList.toggle("sans-serif");
+		storage.set("font", isSans ? "sans" : "serif");
+		updateLabels();
+	});
+
+	btnZoomOut.addEventListener("click", () => changeSize(-1));
+	btnZoomIn.addEventListener("click", () => changeSize(1));
+
+	btnAlign.addEventListener("click", () => {
+		const isLeft = document.body.classList.toggle("align-left");
+		storage.set("align", isLeft ? "left" : "justify");
+		updateLabels();
+	});
+
+	btnReset.addEventListener("click", () => {
+		document.body.classList.remove("dark-mode", "sans-serif", "align-left");
+		document.documentElement.style.fontSize = "";
+		storage.clear();
+		updateLabels();
+	});
+
+	const indexEl = document.getElementById("index");
+	if (indexEl) {
+		document.querySelectorAll("h2:not(#index):not(#intro):not(.part), .top").forEach((el) => {
+			el.dataset.backToToc = "";
+			el.title = "Volver al índice";
+			el.setAttribute("role", "button");
+			el.tabIndex = 0;
+
+			const goIndex = () => {
+				const sel = window.getSelection();
+				if (sel) sel.removeAllRanges();
+				indexEl.scrollIntoView();
+			};
+
+			el.addEventListener("click", goIndex);
+			el.addEventListener("keydown", (e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					e.preventDefault();
+					goIndex();
+				}
+			});
+		});
+	}
+
+	updateLabels();
+</script>
+
+</body>
+</html>
